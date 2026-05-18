@@ -33,11 +33,25 @@ function initFAQ() {
 function initNav() {
   const hamburger = document.querySelector('.nav-hamburger');
   const mobileMenu = document.querySelector('.nav-mobile');
+  const backdrop   = document.querySelector('.nav-backdrop');
   if (!hamburger || !mobileMenu) return;
+
+  function closeMenu() {
+    mobileMenu.classList.remove('open');
+    backdrop?.classList.remove('open');
+    hamburger.setAttribute('aria-expanded', 'false');
+  }
 
   hamburger.addEventListener('click', () => {
     const isOpen = mobileMenu.classList.toggle('open');
-    hamburger.setAttribute('aria-expanded', isOpen);
+    backdrop?.classList.toggle('open', isOpen);
+    hamburger.setAttribute('aria-expanded', String(isOpen));
+  });
+
+  backdrop?.addEventListener('click', closeMenu);
+
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape' && mobileMenu.classList.contains('open')) closeMenu();
   });
 }
 
@@ -69,64 +83,74 @@ function initCardMatrix(card) {
   const canvas = card.querySelector('.sec-card-matrix');
   if (!canvas) return;
 
-  const dpr = window.devicePixelRatio || 1;
-  const W   = card.offsetWidth;
-  const H   = card.offsetHeight;
-  if (!W || !H) return;
+  const dpr    = window.devicePixelRatio || 1;
+  const gap    = 5;
+  const baseR  = 1.0;
+  const HIDE_DUR = 300;
 
-  canvas.width  = W * dpr;
-  canvas.height = H * dpr;
-  canvas.style.width  = W + 'px';
-  canvas.style.height = H + 'px';
-
-  const gap   = 5;
-  const baseR = 1.0;
-  const cx    = W / 2, cy = H / 2;
-  const maxR  = Math.sqrt(cx * cx + cy * cy);
-
-  const clearR = maxR * 0.24;
-  const blendR = maxR * 0.18;
-
-  const dots = [];
-  for (let y = 0; y < H; y += gap) {
-    for (let x = 0; x < W; x += gap) {
-      const dist = Math.sqrt((x - cx) ** 2 + (y - cy) ** 2);
-
-      let mask = 0;
-      if (dist >= clearR + blendR)  mask = 1;
-      else if (dist >= clearR)      mask = (dist - clearR) / blendR;
-      if (mask < 0.05) continue;
-
-      // Radial brightness gradient: outer dots are inherently brighter → depth
-      const radialT     = Math.min((dist - clearR) / (maxR - clearR), 1);
-      const radialBright = 0.28 + 0.72 * radialT;
-
-      const roll = Math.random();
-      const base = roll < 0.10
-        ? 0.50 + Math.random() * 0.40
-        : 0.06 + Math.random() * 0.24;
-
-      const waveSpan = maxR - clearR;
-      const delay    = ((dist - clearR) / waveSpan) * 260;
-
-      dots.push({
-        x, y, dist,
-        a:      base * mask * radialBright,
-        delay,
-        dur:    70 + Math.random() * 60,
-        aPhase: Math.random() * Math.PI * 2,
-        aRate:  0.00090 + Math.random() * 0.00080,
-        sPhase: Math.random() * Math.PI * 2,
-        sRate:  0.00160 + Math.random() * 0.00120,
-      });
-    }
-  }
-
-  const ctx = canvas.getContext('2d');
+  let W = 0, H = 0, cx = 0, cy = 0, maxR = 0;
+  let dots = [];
+  let ctx  = null;
   let raf = null, hoverTs = null, hideTs = null, hiding = false;
   let snap = null;
 
-  const HIDE_DUR = 300;
+  function buildCanvas() {
+    const newW = card.offsetWidth;
+    const newH = card.offsetHeight;
+    if (!newW || !newH) return;
+    if (newW === W && newH === H) return;
+
+    if (raf) { cancelAnimationFrame(raf); raf = null; }
+    hoverTs = null; hideTs = null; hiding = false; snap = null;
+
+    W = newW; H = newH;
+    cx = W / 2; cy = H / 2;
+    maxR = Math.sqrt(cx * cx + cy * cy);
+
+    canvas.width  = W * dpr;
+    canvas.height = H * dpr;
+    canvas.style.width  = W + 'px';
+    canvas.style.height = H + 'px';
+
+    ctx = canvas.getContext('2d');
+
+    const clearR   = maxR * 0.24;
+    const blendR   = maxR * 0.18;
+    const waveSpan = maxR - clearR;
+
+    dots = [];
+    for (let y = 0; y < H; y += gap) {
+      for (let x = 0; x < W; x += gap) {
+        const dist = Math.sqrt((x - cx) ** 2 + (y - cy) ** 2);
+
+        let mask = 0;
+        if (dist >= clearR + blendR)  mask = 1;
+        else if (dist >= clearR)      mask = (dist - clearR) / blendR;
+        if (mask < 0.05) continue;
+
+        const radialT      = Math.min((dist - clearR) / (maxR - clearR), 1);
+        const radialBright = 0.28 + 0.72 * radialT;
+
+        const roll = Math.random();
+        const base = roll < 0.10
+          ? 0.50 + Math.random() * 0.40
+          : 0.06 + Math.random() * 0.24;
+
+        dots.push({
+          x, y, dist,
+          a:      base * mask * radialBright,
+          delay:  ((dist - clearR) / waveSpan) * 260,
+          dur:    70 + Math.random() * 60,
+          aPhase: Math.random() * Math.PI * 2,
+          aRate:  0.00090 + Math.random() * 0.00080,
+          sPhase: Math.random() * Math.PI * 2,
+          sRate:  0.00160 + Math.random() * 0.00120,
+        });
+      }
+    }
+  }
+
+  new ResizeObserver(buildCanvas).observe(card);
 
   // Live alpha + radius — runs at all times, even during the wave reveal.
   // By keeping this unified, there is no phase switch and therefore no flicker.
@@ -215,9 +239,7 @@ function initCardMatrix(card) {
 }
 
 function initSecurityCards() {
-  setTimeout(() => {
-    document.querySelectorAll('.sec-card').forEach(initCardMatrix);
-  }, 80);
+  document.querySelectorAll('.sec-card').forEach(initCardMatrix);
 }
 
 /* ============================================================
@@ -229,6 +251,7 @@ function initAboutPhotos() {
 
   const cols   = [...strip.querySelectorAll('.about-photo-col')];
   const labels = [...document.querySelectorAll('.about-photo-label')];
+  if (cols.length !== labels.length) return;
 
   cols.forEach((col, i) => {
     col.addEventListener('mouseenter', () => {
@@ -243,9 +266,7 @@ function initAboutPhotos() {
   });
 
   strip.addEventListener('mouseleave', () => {
-    cols.forEach(c => {
-      c.classList.remove('pc-expanded', 'pc-collapsed');
-    });
+    cols.forEach(c => c.classList.remove('pc-expanded', 'pc-collapsed'));
     labels.forEach(l => l.classList.remove('pc-visible'));
   });
 }
