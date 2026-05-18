@@ -39,6 +39,9 @@
   --pad-x-mobile:  20px;
   --section-y:     120px;
 
+  /* Nav height — keeps top grid line flush with nav bottom */
+  --nav-h:         62px;
+
   /* Transitions */
   --ease:          cubic-bezier(0.16, 1, 0.3, 1);
   --dur:           0.4s;
@@ -384,7 +387,7 @@ ol, ul { list-style: none; }
   background: var(--grid-line);
 }
 
-.hero-grid-h-top { top:    70px; }
+.hero-grid-h-top { top:    var(--nav-h); }
 .hero-grid-h-bot { bottom: 70px; }
 
 /* Corner squares where the bottom line meets the vertical rails */
@@ -1172,12 +1175,25 @@ ol, ul { list-style: none; }
 .step-card.visible .str-rows                { animation: svg-fade-in  0.5s ease                           1.05s both; }
 
 /* ============================================================
+   RESPONSIVE – LARGE DESKTOP (≥ 1400px)
+   At this width, container + 2×100px padding = 1400px exactly.
+   Above it, pad-x expands so rails & content stay locked to
+   the container boundary instead of drifting to viewport edges.
+   ============================================================ */
+@media (min-width: 1400px) {
+  :root {
+    --pad-x: calc((100vw - var(--container)) / 2);
+  }
+}
+
+/* ============================================================
    RESPONSIVE – TABLET (810px–1199px)
    ============================================================ */
 @media (min-width: 810px) and (max-width: 1199px) {
   :root {
     --pad-x: var(--pad-x-tablet);
     --section-y: 90px;
+    --nav-h: 58px;
   }
 
   .nav-inner { padding: 16px var(--pad-x-tablet); }
@@ -1188,8 +1204,9 @@ ol, ul { list-style: none; }
   .value-prop-inner { grid-template-columns: 1fr; gap: 48px; }
   .value-prop-image { order: -1; max-width: 480px; margin: 0 auto; }
 
-  .steps-grid { grid-template-columns: 1fr 1fr; }
-  .step-card:nth-child(1) { grid-row: span 1; }
+  .steps-grid { grid-template-columns: 1fr 1fr; height: auto; grid-auto-rows: minmax(220px, auto); }
+  .step-card:nth-child(1) { grid-row: span 1; grid-column: span 1; }
+  .step-card:nth-child(4) { grid-column: span 1; }
 
   .case-grid { grid-template-columns: 1fr; }
 }
@@ -1201,6 +1218,7 @@ ol, ul { list-style: none; }
   :root {
     --pad-x: var(--pad-x-mobile);
     --section-y: 72px;
+    --nav-h: 54px;
   }
 
   .nav-inner { padding: 14px var(--pad-x-mobile); }
@@ -1225,9 +1243,12 @@ ol, ul { list-style: none; }
 
   .steps-grid {
     grid-template-columns: 1fr;
+    height: auto;
+    grid-auto-rows: minmax(200px, auto);
   }
 
-  .step-card:nth-child(1) { grid-row: span 1; }
+  .step-card:nth-child(1) { grid-row: span 1; grid-column: span 1; }
+  .step-card:nth-child(4) { grid-column: span 1; }
 
   .case-grid { grid-template-columns: 1fr; }
 
