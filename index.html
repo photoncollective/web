@@ -80,17 +80,17 @@
         </button>
       </div>
 
-      <!-- Mobile menu -->
-      <div class="nav-mobile" role="menu">
-        <a href="index.html" role="menuitem" class="active">Home</a>
-        <a href="about-us.html" role="menuitem">About Us</a>
-        <a href="security.html" role="menuitem">Security</a>
-        <a href="booking.html" role="menuitem" class="nav-mobile-cta">
-          Book a call
-          <svg width="9" height="9" viewBox="0 0 9 9" fill="none" aria-hidden="true"><path d="M1 8L8 1M8 1H3M8 1V6" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </a>
-      </div>
     </nav>
+    <!-- Mobile menu — sibling of nav so backdrop-filter sees raw page content -->
+    <div class="nav-mobile" role="menu">
+      <a href="index.html" role="menuitem" class="active">Home</a>
+      <a href="about-us.html" role="menuitem">About Us</a>
+      <a href="security.html" role="menuitem">Security</a>
+      <a href="booking.html" role="menuitem" class="nav-mobile-cta">
+        Book a call
+        <svg width="9" height="9" viewBox="0 0 9 9" fill="none" aria-hidden="true"><path d="M1 8L8 1M8 1H3M8 1V6" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </div>
     <div class="nav-backdrop" aria-hidden="true"></div>
   </header>
 
