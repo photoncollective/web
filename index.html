@@ -87,7 +87,7 @@
       <a href="about-us.html" role="menuitem">About Us</a>
       <a href="security.html" role="menuitem">Security</a>
       <a href="booking.html" role="menuitem" class="nav-mobile-cta">
-        Book a call
+        Book a Call
         <svg width="9" height="9" viewBox="0 0 9 9" fill="none" aria-hidden="true"><path d="M1 8L8 1M8 1H3M8 1V6" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </a>
     </div>
@@ -116,8 +116,9 @@
 
         <!-- Text cluster: eyebrow + heading + sub -->
         <div class="hero-text-cluster">
-          <p class="hero-eyebrow">
+          <p class="hero-eyebrow" aria-label="At Photon collective, we">
             At
+            <span class="sr-only">Photon</span>
             <svg class="eyebrow-bolt" viewBox="0 0 27 19" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
               <path d="M 27 0 C 18.509 5.44 13.476 8.522 17.231 12.615 L 0 12.615 Z" fill="rgb(255, 255, 255)"/>
               <path d="M 27 6.196 C 18.509 11.637 13.476 14.718 17.231 18.811 L 0 18.811 Z" fill="rgb(255, 255, 255)"/>
@@ -211,28 +212,28 @@
                     <stop offset="100%" stop-color="rgba(20,50,120,0.04)"/>
                   </linearGradient>
                 </defs>
-                <!-- Area fill -->
+                <!-- Baseline reference line -->
+                <line class="chart-baseline" x1="-60" y1="154" x2="810" y2="154"
+                      stroke="rgba(100,175,255,0.10)" stroke-width="1" stroke-dasharray="10 6"/>
+                <!-- Area fill — simplified to 7 clear steps -->
                 <path class="chart-area"
-                  d="M -60 280 L -60 220.769
-                     L 26.92 220.769 L 50.072 201.385 L 63.532 201.385
-                     L 80.222 187.923 L 106.066 187.923 L 120.603 173.923
-                     L 135.14 173.923 L 150.215 190.615 L 180.366 190.615
-                     L 211.055 165.846 L 229.899 165.846 L 248.743 154
-                     L 279.433 154 L 366.116 83.462 L 552.404 83.462
-                     L 596.554 42 L 615.936 42 L 635.857 22.077
-                     L 648.779 22.077 L 660.624 28.538 L 677.853 28.538
-                     L 697.774 8.615 L 810 8.615 L 810 280 Z"
+                  d="M -60 280 L -60 222
+                     L 60 222 L 90 200
+                     L 175 200 L 210 170
+                     L 252 170 L 264 185
+                     L 292 185 L 366 83
+                     L 552 83 L 600 46
+                     L 652 24 L 700 10
+                     L 810 10 L 810 280 Z"
                   fill="url(#chart-grad)"/>
                 <!-- Step line -->
                 <path class="chart-line"
-                  d="M -60 220.769 L 26.92 220.769 L 50.072 201.385
-                     L 63.532 201.385 L 80.222 187.923 L 106.066 187.923
-                     L 120.603 173.923 L 135.14 173.923 L 150.215 190.615
-                     L 180.366 190.615 L 211.055 165.846 L 229.899 165.846
-                     L 248.743 154 L 279.433 154 L 366.116 83.462
-                     L 552.404 83.462 L 596.554 42 L 615.936 42
-                     L 635.857 22.077 L 648.779 22.077 L 660.624 28.538
-                     L 677.853 28.538 L 697.774 8.615 L 810 8.615"
+                  d="M -60 222 L 60 222 L 90 200
+                     L 175 200 L 210 170
+                     L 252 170 L 264 185
+                     L 292 185 L 366 83
+                     L 552 83 L 600 46
+                     L 652 24 L 700 10 L 810 10"
                   fill="none"
                   stroke="rgba(100,180,255,0.85)"
                   stroke-width="2"/>
@@ -253,57 +254,83 @@
             </div>
             <p class="step-desc">Create tailored workflows and interfaces that make complex financial tasks feel simple.</p>
             <div class="step-visual" aria-hidden="true">
-              <!-- Interface wireframe — design canvas with selected element -->
-              <svg class="step-card-svg" viewBox="0 0 390 95" preserveAspectRatio="xMidYMid meet" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <!-- Design canvas: layers panel + centred artboard + selection handles -->
+              <svg class="step-card-svg" viewBox="0 0 400 200" preserveAspectRatio="xMidYMid slice" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <!-- Toolbar -->
                 <g class="dsgn-nav">
-                  <rect x="0" y="0" width="390" height="16" fill="rgba(40,100,220,0.22)"/>
-                  <rect x="8"   y="6"  width="28" height="6"  rx="2"   fill="rgba(255,255,255,0.38)"/>
-                  <rect x="255" y="7"  width="22" height="5"  rx="1.5" fill="rgba(255,255,255,0.18)"/>
-                  <rect x="284" y="7"  width="22" height="5"  rx="1.5" fill="rgba(255,255,255,0.18)"/>
-                  <rect x="316" y="5"  width="36" height="8"  rx="3"   fill="rgba(100,175,255,0.48)"/>
+                  <rect x="0" y="0" width="400" height="18" fill="rgba(40,100,220,0.22)"/>
+                  <rect x="8"   y="6.5" width="24" height="5"   rx="2"   fill="rgba(255,255,255,0.38)"/>
+                  <rect x="160" y="7"   width="14" height="4"   rx="2"   fill="rgba(255,255,255,0.18)"/>
+                  <rect x="180" y="7"   width="14" height="4"   rx="2"   fill="rgba(255,255,255,0.18)"/>
+                  <rect x="200" y="7"   width="14" height="4"   rx="2"   fill="rgba(255,255,255,0.18)"/>
+                  <rect x="352" y="5.5" width="40" height="8"   rx="3"   fill="rgba(100,175,255,0.48)"/>
                 </g>
+                <!-- Layers panel -->
                 <g class="dsgn-c1">
-                  <rect x="6"   y="21" width="116" height="30" rx="4" fill="rgba(50,120,255,0.22)" stroke="rgba(100,175,255,0.35)" stroke-width="1"/>
-                  <rect x="14"  y="28" width="38" height="9" rx="2" fill="rgba(120,195,255,0.78)"/>
-                  <rect x="14"  y="41" width="62" height="4" rx="2" fill="rgba(255,255,255,0.22)"/>
+                  <rect x="0" y="18" width="74" height="182" fill="rgba(25,60,155,0.12)"/>
+                  <line x1="74" y1="18" x2="74" y2="200" stroke="rgba(100,175,255,0.12)" stroke-width="1"/>
+                  <rect x="10" y="26" width="22" height="3.5" rx="2" fill="rgba(255,255,255,0.20)"/>
+                  <circle cx="13" cy="38"  r="2.5" fill="rgba(100,175,255,0.85)"/>
+                  <rect x="20" y="35"  width="40" height="5"   rx="2"   fill="rgba(120,195,255,0.72)"/>
+                  <circle cx="17" cy="50"  r="2"   fill="rgba(100,175,255,0.40)"/>
+                  <rect x="24" y="47"  width="34" height="4.5" rx="2"   fill="rgba(255,255,255,0.22)"/>
+                  <circle cx="17" cy="61"  r="2"   fill="rgba(100,175,255,0.30)"/>
+                  <rect x="24" y="58"  width="28" height="4.5" rx="2"   fill="rgba(255,255,255,0.16)"/>
+                  <line x1="8" y1="72" x2="66" y2="72" stroke="rgba(255,255,255,0.07)" stroke-width="1"/>
+                  <circle cx="13" cy="82"  r="2.5" fill="rgba(100,175,255,0.28)"/>
+                  <rect x="20" y="79"  width="36" height="4.5" rx="2"   fill="rgba(255,255,255,0.18)"/>
+                  <circle cx="17" cy="93"  r="2"   fill="rgba(100,175,255,0.20)"/>
+                  <rect x="24" y="90"  width="30" height="4.5" rx="2"   fill="rgba(255,255,255,0.13)"/>
+                  <circle cx="17" cy="104" r="2"   fill="rgba(100,175,255,0.16)"/>
+                  <rect x="24" y="101" width="24" height="4.5" rx="2"   fill="rgba(255,255,255,0.10)"/>
+                  <line x1="8" y1="114" x2="66" y2="114" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+                  <circle cx="13" cy="124" r="2"   fill="rgba(100,175,255,0.20)"/>
+                  <rect x="20" y="121" width="32" height="4.5" rx="2"   fill="rgba(255,255,255,0.14)"/>
+                  <circle cx="17" cy="135" r="2"   fill="rgba(100,175,255,0.14)"/>
+                  <rect x="24" y="132" width="26" height="4"   rx="2"   fill="rgba(255,255,255,0.09)"/>
                 </g>
+                <!-- Canvas background -->
                 <g class="dsgn-c2">
-                  <rect x="130" y="21" width="116" height="30" rx="4" fill="rgba(50,120,255,0.1)"  stroke="rgba(100,175,255,0.2)"  stroke-width="1"/>
-                  <rect x="138" y="28" width="30" height="9" rx="2" fill="rgba(255,255,255,0.28)"/>
-                  <rect x="138" y="41" width="52" height="4" rx="2" fill="rgba(255,255,255,0.14)"/>
+                  <rect x="74" y="18" width="326" height="182" fill="rgba(15,40,115,0.10)"/>
                 </g>
+                <!-- Artboard with UI content (centred in viewBox at 202,109) -->
                 <g class="dsgn-c3">
-                  <rect x="254" y="21" width="130" height="30" rx="4" fill="rgba(50,120,255,0.08)" stroke="rgba(100,175,255,0.15)" stroke-width="1"/>
-                  <rect x="262" y="28" width="34" height="9" rx="2" fill="rgba(255,255,255,0.22)"/>
-                  <rect x="262" y="41" width="48" height="4" rx="2" fill="rgba(255,255,255,0.11)"/>
+                  <rect x="128" y="28" width="148" height="144" rx="6" fill="rgba(20,55,160,0.18)" stroke="rgba(100,175,255,0.22)" stroke-width="1"/>
+                  <!-- Artboard nav strip -->
+                  <rect x="128" y="28" width="148" height="20" fill="rgba(40,100,220,0.28)"/>
+                  <circle cx="138" cy="38" r="3.5" fill="rgba(255,255,255,0.40)"/>
+                  <rect x="232" y="35"  width="14" height="4"   rx="2"   fill="rgba(255,255,255,0.18)"/>
+                  <rect x="252" y="34"  width="18" height="5.5" rx="2.5" fill="rgba(100,175,255,0.55)"/>
+                  <!-- Hero section -->
+                  <rect x="138" y="55"  width="78" height="7"   rx="3.5" fill="rgba(120,195,255,0.70)"/>
+                  <rect x="138" y="66"  width="94" height="4.5" rx="2.5" fill="rgba(255,255,255,0.22)"/>
+                  <rect x="138" y="74"  width="80" height="4.5" rx="2.5" fill="rgba(255,255,255,0.16)"/>
+                  <rect x="138" y="84"  width="46" height="12"  rx="4"   fill="rgba(100,175,255,0.55)"/>
+                  <line x1="132" y1="102" x2="272" y2="102" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+                  <!-- Card A (left, active) -->
+                  <rect x="133" y="107" width="62" height="56" rx="4" fill="rgba(45,110,230,0.22)" stroke="rgba(100,175,255,0.38)" stroke-width="1"/>
+                  <rect x="139" y="113" width="36" height="6"   rx="3"   fill="rgba(120,195,255,0.58)"/>
+                  <rect x="139" y="123" width="48" height="3.5" rx="2"   fill="rgba(255,255,255,0.20)"/>
+                  <rect x="139" y="130" width="42" height="3.5" rx="2"   fill="rgba(255,255,255,0.14)"/>
+                  <rect x="139" y="150" width="32" height="7"   rx="3"   fill="rgba(100,175,255,0.40)"/>
+                  <!-- Card B (right) -->
+                  <rect x="201" y="107" width="68" height="56" rx="4" fill="rgba(45,110,230,0.10)" stroke="rgba(100,175,255,0.16)" stroke-width="1"/>
+                  <rect x="207" y="113" width="38" height="6"   rx="3"   fill="rgba(255,255,255,0.20)"/>
+                  <rect x="207" y="123" width="54" height="3.5" rx="2"   fill="rgba(255,255,255,0.13)"/>
+                  <rect x="207" y="130" width="46" height="3.5" rx="2"   fill="rgba(255,255,255,0.09)"/>
+                  <rect x="207" y="150" width="36" height="7"   rx="3"   fill="rgba(255,255,255,0.08)"/>
                 </g>
+                <!-- Selection frame around artboard -->
                 <g class="dsgn-table">
-                  <rect x="6"  y="56" width="378" height="33" rx="4"
-                        fill="rgba(20,60,180,0.1)"
-                        stroke="rgba(100,180,255,0.68)"
-                        stroke-width="1.5"
-                        stroke-dasharray="5 3"/>
-                  <rect x="14"  y="62" width="55" height="4" rx="2" fill="rgba(255,255,255,0.26)"/>
-                  <rect x="105" y="62" width="45" height="4" rx="2" fill="rgba(255,255,255,0.18)"/>
-                  <rect x="210" y="62" width="50" height="4" rx="2" fill="rgba(255,255,255,0.18)"/>
-                  <rect x="316" y="62" width="42" height="4" rx="2" fill="rgba(255,255,255,0.18)"/>
-                  <rect x="14"  y="71" width="44" height="4" rx="2" fill="rgba(120,195,255,0.38)"/>
-                  <rect x="105" y="71" width="38" height="4" rx="2" fill="rgba(255,255,255,0.12)"/>
-                  <rect x="210" y="71" width="42" height="4" rx="2" fill="rgba(255,255,255,0.12)"/>
-                  <rect x="316" y="71" width="32" height="4" rx="2" fill="rgba(255,255,255,0.12)"/>
-                  <rect x="14"  y="79" width="36" height="4" rx="2" fill="rgba(255,255,255,0.1)"/>
-                  <rect x="105" y="79" width="30" height="4" rx="2" fill="rgba(255,255,255,0.07)"/>
-                  <rect x="210" y="79" width="34" height="4" rx="2" fill="rgba(255,255,255,0.07)"/>
-                  <rect x="316" y="79" width="28" height="4" rx="2" fill="rgba(255,255,255,0.07)"/>
-                  <line x1="96"  y1="57" x2="96"  y2="88" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
-                  <line x1="200" y1="57" x2="200" y2="88" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
-                  <line x1="308" y1="57" x2="308" y2="88" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+                  <rect x="121" y="21" width="162" height="158" rx="8"
+                        stroke="rgba(100,180,255,0.70)" stroke-width="1.5" stroke-dasharray="5 3" fill="none"/>
                 </g>
+                <!-- Corner handles -->
                 <g class="dsgn-handles">
-                  <rect x="2"   y="52" width="7" height="7" rx="1" fill="rgba(100,180,255,0.9)"  stroke="rgba(255,255,255,0.5)" stroke-width="0.5"/>
-                  <rect x="381" y="52" width="7" height="7" rx="1" fill="rgba(100,180,255,0.9)"  stroke="rgba(255,255,255,0.5)" stroke-width="0.5"/>
-                  <rect x="2"   y="85" width="7" height="7" rx="1" fill="rgba(100,180,255,0.9)"  stroke="rgba(255,255,255,0.5)" stroke-width="0.5"/>
-                  <rect x="381" y="85" width="7" height="7" rx="1" fill="rgba(100,180,255,0.9)"  stroke="rgba(255,255,255,0.5)" stroke-width="0.5"/>
+                  <rect x="117" y="17"  width="7" height="7" rx="1" fill="rgba(100,180,255,0.90)" stroke="rgba(255,255,255,0.50)" stroke-width="0.5"/>
+                  <rect x="279" y="17"  width="7" height="7" rx="1" fill="rgba(100,180,255,0.90)" stroke="rgba(255,255,255,0.50)" stroke-width="0.5"/>
+                  <rect x="117" y="175" width="7" height="7" rx="1" fill="rgba(100,180,255,0.90)" stroke="rgba(255,255,255,0.50)" stroke-width="0.5"/>
+                  <rect x="279" y="175" width="7" height="7" rx="1" fill="rgba(100,180,255,0.90)" stroke="rgba(255,255,255,0.50)" stroke-width="0.5"/>
                 </g>
               </svg>
             </div>
@@ -317,8 +344,8 @@
             </div>
             <p class="step-desc">Move fast—testing, refining, and aligning until the product fits real use.</p>
             <div class="step-visual" aria-hidden="true">
-              <!-- Iteration cycle: viewBox matches 395×243 ratio exactly (280×172) -->
-              <svg class="step-card-svg" viewBox="0 0 280 172" preserveAspectRatio="xMidYMid meet" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <!-- Iteration cycle: nodes placed exactly on guide circle r=66, arrows are true circular arcs -->
+              <svg class="step-card-svg" viewBox="0 0 280 178" preserveAspectRatio="xMidYMid meet" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <defs>
                   <marker id="cyc-arr" markerWidth="7" markerHeight="7" refX="3.5" refY="3.5" orient="auto">
                     <path d="M0,0.5 L6.5,3.5 L0,6.5 Z" fill="rgba(100,165,255,0.6)"/>
@@ -327,36 +354,39 @@
                     <path d="M0,0.5 L6.5,3.5 L0,6.5 Z" fill="rgba(130,195,255,0.85)"/>
                   </marker>
                 </defs>
-                <!-- Outer guide circle -->
-                <circle class="cyc-guide" cx="140" cy="86" r="70" stroke="rgba(80,150,255,0.1)" stroke-width="1" stroke-dasharray="4 5"/>
-                <!-- Arrows (clockwise) -->
+                <!-- Guide circle — nodes sit exactly on this ring (cx=140, cy=92, r=66) -->
+                <circle class="cyc-guide" cx="140" cy="92" r="66" stroke="rgba(80,150,255,0.12)" stroke-width="1" stroke-dasharray="4 5"/>
+                <!-- Arrows: true circular arcs tracing the guide circle clockwise between nodes -->
                 <g class="cyc-arrow cyc-a1">
-                  <path d="M 162 38 Q 215 58 204 100" stroke="rgba(100,165,255,0.4)" stroke-width="1.5" fill="none" marker-end="url(#cyc-arr)"/>
+                  <!-- N1(top,270°) → N2(bottom-right,30°): exit 290°→enter 10° -->
+                  <path d="M 163 30 A 66 66 0 0 1 205 104" stroke="rgba(100,165,255,0.4)" stroke-width="1.5" fill="none" marker-end="url(#cyc-arr)"/>
                 </g>
                 <g class="cyc-arrow cyc-a2">
-                  <path d="M 170 128 Q 140 150 110 128" stroke="rgba(100,165,255,0.4)" stroke-width="1.5" fill="none" marker-end="url(#cyc-arr)"/>
+                  <!-- N2(30°) → N3(bottom-left,150°): exit 50°→enter 129° -->
+                  <path d="M 182 143 A 66 66 0 0 1 99 143" stroke="rgba(100,165,255,0.4)" stroke-width="1.5" fill="none" marker-end="url(#cyc-arr)"/>
                 </g>
                 <g class="cyc-arrow cyc-a3">
-                  <path d="M 68 100 Q 60 58 118 38" stroke="rgba(120,190,255,0.65)" stroke-width="1.5" fill="none" marker-end="url(#cyc-arr-bright)"/>
+                  <!-- N3(150°) → N1(270°): exit 171°→enter 250° -->
+                  <path d="M 75 102 A 66 66 0 0 1 117 30" stroke="rgba(120,190,255,0.65)" stroke-width="1.5" fill="none" marker-end="url(#cyc-arr-bright)"/>
                 </g>
-                <!-- Build node (top) -->
+                <!-- Build node (top, 270° on circle) -->
                 <g class="cyc-node cyc-n1">
-                  <circle cx="140" cy="24" r="26" fill="rgba(40,100,220,0.2)" stroke="rgba(100,165,255,0.45)" stroke-width="1.5"/>
-                  <rect x="122" y="18" width="36" height="5" rx="2.5" fill="rgba(255,255,255,0.2)"/>
-                  <rect x="126" y="26" width="28" height="4" rx="2"   fill="rgba(100,165,255,0.4)"/>
+                  <circle cx="140" cy="26" r="22" fill="rgba(40,100,220,0.20)" stroke="rgba(100,165,255,0.45)" stroke-width="1.5"/>
+                  <rect x="124" y="20"  width="32" height="5" rx="2.5" fill="rgba(255,255,255,0.20)"/>
+                  <rect x="128" y="28"  width="24" height="4" rx="2"   fill="rgba(100,165,255,0.40)"/>
                 </g>
-                <!-- Test node (bottom-right) -->
+                <!-- Test node (bottom-right, 30° on circle) -->
                 <g class="cyc-node cyc-n2">
-                  <circle cx="194" cy="117" r="26" fill="rgba(40,105,225,0.22)" stroke="rgba(100,172,255,0.5)" stroke-width="1.5"/>
-                  <rect x="177" y="111" width="34" height="5" rx="2.5" fill="rgba(255,255,255,0.22)"/>
-                  <rect x="181" y="119" width="26" height="4" rx="2"   fill="rgba(100,170,255,0.38)"/>
+                  <circle cx="197" cy="125" r="22" fill="rgba(40,105,225,0.22)" stroke="rgba(100,172,255,0.50)" stroke-width="1.5"/>
+                  <rect x="180" y="119" width="34" height="5" rx="2.5" fill="rgba(255,255,255,0.22)"/>
+                  <rect x="184" y="127" width="26" height="4" rx="2"   fill="rgba(100,170,255,0.38)"/>
                 </g>
-                <!-- Refine node (bottom-left, active/brightest) -->
+                <!-- Refine node (bottom-left, 150° on circle — active/brightest) -->
                 <g class="cyc-node cyc-n3">
-                  <circle cx="86" cy="117" r="30" fill="rgba(40,115,255,0.28)" stroke="rgba(120,192,255,0.78)" stroke-width="2"/>
-                  <circle cx="86" cy="117" r="52" fill="rgba(60,130,255,0.06)"/>
-                  <rect x="66" y="110" width="40" height="6" rx="3"   fill="rgba(140,205,255,0.72)"/>
-                  <rect x="70" y="119" width="32" height="5" rx="2.5" fill="rgba(255,255,255,0.28)"/>
+                  <circle cx="83" cy="125" r="34" fill="rgba(60,130,255,0.07)"/>
+                  <circle cx="83" cy="125" r="24" fill="rgba(40,115,255,0.28)" stroke="rgba(120,192,255,0.78)" stroke-width="2"/>
+                  <rect x="63" y="118"  width="40" height="6" rx="3"   fill="rgba(140,205,255,0.70)"/>
+                  <rect x="67" y="127"  width="32" height="5" rx="2.5" fill="rgba(255,255,255,0.28)"/>
                 </g>
               </svg>
             </div>
@@ -370,52 +400,52 @@
             </div>
             <p class="step-desc">Turn fragmented internal data into a clean, connected foundation your product can rely on.</p>
             <div class="step-visual" aria-hidden="true">
-              <!-- Data consolidation: viewBox matches 797×98 ratio (620×76) -->
-              <svg class="step-card-svg" viewBox="0 0 620 76" preserveAspectRatio="xMidYMid slice" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <!-- Scattered raw source nodes (left, dashed) -->
+              <!-- Data consolidation: hub centred at (250,90), sources left, rows right — works at any crop -->
+              <svg class="step-card-svg" viewBox="0 0 500 180" preserveAspectRatio="xMidYMid slice" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <!-- Scattered raw source nodes (left cluster) -->
                 <g class="str-sources">
-                  <circle cx="32"  cy="18" r="9"  fill="rgba(40,80,180,0.18)" stroke="rgba(80,140,255,0.32)" stroke-width="1" stroke-dasharray="3 2"/>
-                  <circle cx="22"  cy="54" r="7"  fill="rgba(40,80,180,0.14)" stroke="rgba(80,140,255,0.24)" stroke-width="1" stroke-dasharray="3 2"/>
-                  <circle cx="76"  cy="10" r="10" fill="rgba(40,80,180,0.18)" stroke="rgba(80,140,255,0.32)" stroke-width="1" stroke-dasharray="3 2"/>
-                  <circle cx="96"  cy="60" r="8"  fill="rgba(40,80,180,0.15)" stroke="rgba(80,140,255,0.26)" stroke-width="1" stroke-dasharray="3 2"/>
-                  <circle cx="140" cy="32" r="11" fill="rgba(40,80,180,0.2)"  stroke="rgba(80,140,255,0.34)" stroke-width="1" stroke-dasharray="3 2"/>
+                  <circle cx="40"  cy="30"  r="9"  fill="rgba(40,80,180,0.18)" stroke="rgba(80,140,255,0.32)" stroke-width="1" stroke-dasharray="3 2"/>
+                  <circle cx="32"  cy="90"  r="7"  fill="rgba(40,80,180,0.14)" stroke="rgba(80,140,255,0.24)" stroke-width="1" stroke-dasharray="3 2"/>
+                  <circle cx="82"  cy="16"  r="10" fill="rgba(40,80,180,0.18)" stroke="rgba(80,140,255,0.32)" stroke-width="1" stroke-dasharray="3 2"/>
+                  <circle cx="96"  cy="64"  r="8"  fill="rgba(40,80,180,0.15)" stroke="rgba(80,140,255,0.26)" stroke-width="1" stroke-dasharray="3 2"/>
+                  <circle cx="148" cy="40"  r="11" fill="rgba(40,80,180,0.20)" stroke="rgba(80,140,255,0.34)" stroke-width="1" stroke-dasharray="3 2"/>
                 </g>
-                <!-- Converging dashed lines → hub -->
+                <!-- Converging dashed lines → hub at (250,90) -->
                 <g class="str-lines-in">
-                  <line x1="41"  y1="18" x2="288" y2="36" stroke="rgba(80,150,255,0.2)"  stroke-width="1" stroke-dasharray="5 4"/>
-                  <line x1="29"  y1="54" x2="288" y2="40" stroke="rgba(80,150,255,0.2)"  stroke-width="1" stroke-dasharray="5 4"/>
-                  <line x1="86"  y1="10" x2="289" y2="33" stroke="rgba(80,150,255,0.2)"  stroke-width="1" stroke-dasharray="5 4"/>
-                  <line x1="104" y1="60" x2="289" y2="43" stroke="rgba(80,150,255,0.2)"  stroke-width="1" stroke-dasharray="5 4"/>
-                  <line x1="151" y1="32" x2="290" y2="38" stroke="rgba(80,150,255,0.22)" stroke-width="1" stroke-dasharray="5 4"/>
+                  <line x1="40"  y1="30"  x2="250" y2="90" stroke="rgba(80,150,255,0.20)" stroke-width="1" stroke-dasharray="5 4"/>
+                  <line x1="32"  y1="90"  x2="250" y2="90" stroke="rgba(80,150,255,0.20)" stroke-width="1" stroke-dasharray="5 4"/>
+                  <line x1="82"  y1="16"  x2="250" y2="90" stroke="rgba(80,150,255,0.20)" stroke-width="1" stroke-dasharray="5 4"/>
+                  <line x1="96"  y1="64"  x2="250" y2="90" stroke="rgba(80,150,255,0.20)" stroke-width="1" stroke-dasharray="5 4"/>
+                  <line x1="148" y1="40"  x2="250" y2="90" stroke="rgba(80,150,255,0.22)" stroke-width="1" stroke-dasharray="5 4"/>
                 </g>
-                <!-- Hub (center) -->
+                <!-- Hub (centre, always visible) -->
                 <g class="str-hub">
-                  <circle cx="310" cy="38" r="30" fill="rgba(40,110,255,0.08)" stroke="rgba(100,165,255,0.14)" stroke-width="1"/>
-                  <circle cx="310" cy="38" r="21" fill="rgba(40,115,255,0.18)" stroke="rgba(110,178,255,0.42)" stroke-width="1.5"/>
-                  <circle cx="310" cy="38" r="12" fill="rgba(60,130,255,0.38)" stroke="rgba(130,195,255,0.78)" stroke-width="2"/>
-                  <circle cx="310" cy="38" r="5"  fill="rgba(180,220,255,0.92)"/>
+                  <circle cx="250" cy="90" r="30" fill="rgba(40,110,255,0.08)" stroke="rgba(100,165,255,0.14)" stroke-width="1"/>
+                  <circle cx="250" cy="90" r="21" fill="rgba(40,115,255,0.18)" stroke="rgba(110,178,255,0.42)" stroke-width="1.5"/>
+                  <circle cx="250" cy="90" r="12" fill="rgba(60,130,255,0.38)" stroke="rgba(130,195,255,0.78)" stroke-width="2"/>
+                  <circle cx="250" cy="90" r="5"  fill="rgba(180,220,255,0.92)"/>
                 </g>
-                <!-- Output lines hub → rows (solid) -->
+                <!-- Output lines hub → rows (solid, fanning right) -->
                 <g class="str-lines-out">
-                  <line x1="330" y1="30" x2="432" y2="14" stroke="rgba(100,175,255,0.52)" stroke-width="1.5"/>
-                  <line x1="331" y1="35" x2="432" y2="29" stroke="rgba(100,175,255,0.52)" stroke-width="1.5"/>
-                  <line x1="331" y1="41" x2="432" y2="47" stroke="rgba(100,175,255,0.48)" stroke-width="1.5"/>
-                  <line x1="330" y1="46" x2="432" y2="62" stroke="rgba(100,175,255,0.42)" stroke-width="1.5"/>
+                  <line x1="250" y1="90" x2="312" y2="63"  stroke="rgba(100,175,255,0.52)" stroke-width="1.5"/>
+                  <line x1="250" y1="90" x2="312" y2="81"  stroke="rgba(100,175,255,0.52)" stroke-width="1.5"/>
+                  <line x1="250" y1="90" x2="312" y2="99"  stroke="rgba(100,175,255,0.48)" stroke-width="1.5"/>
+                  <line x1="250" y1="90" x2="312" y2="117" stroke="rgba(100,175,255,0.42)" stroke-width="1.5"/>
                 </g>
-                <!-- Clean organized output rows (right) -->
+                <!-- Clean organised output rows (right, centred vertically on y=90) -->
                 <g class="str-rows">
-                  <rect x="432" y="7"  width="182" height="14" rx="4" fill="rgba(50,120,255,0.2)"  stroke="rgba(100,178,255,0.42)" stroke-width="1"/>
-                  <rect x="432" y="25" width="182" height="14" rx="4" fill="rgba(50,120,255,0.14)" stroke="rgba(100,172,255,0.3)"  stroke-width="1"/>
-                  <rect x="432" y="43" width="182" height="14" rx="4" fill="rgba(50,120,255,0.14)" stroke="rgba(100,172,255,0.3)"  stroke-width="1"/>
-                  <rect x="432" y="61" width="182" height="11" rx="4" fill="rgba(50,120,255,0.1)"  stroke="rgba(100,168,255,0.22)" stroke-width="1"/>
-                  <rect x="440" y="11" width="55" height="5" rx="2.5" fill="rgba(255,255,255,0.24)"/>
-                  <rect x="502" y="11" width="35" height="5" rx="2.5" fill="rgba(130,200,255,0.6)"/>
-                  <rect x="440" y="29" width="65" height="5" rx="2.5" fill="rgba(255,255,255,0.18)"/>
-                  <rect x="514" y="29" width="24" height="5" rx="2.5" fill="rgba(130,200,255,0.42)"/>
-                  <rect x="440" y="47" width="58" height="5" rx="2.5" fill="rgba(255,255,255,0.18)"/>
-                  <rect x="506" y="47" width="30" height="5" rx="2.5" fill="rgba(130,200,255,0.42)"/>
-                  <rect x="440" y="64" width="48" height="4" rx="2"   fill="rgba(255,255,255,0.13)"/>
-                  <rect x="496" y="64" width="36" height="4" rx="2"   fill="rgba(130,200,255,0.3)"/>
+                  <rect x="312" y="56"  width="172" height="14" rx="4" fill="rgba(50,120,255,0.20)" stroke="rgba(100,178,255,0.42)" stroke-width="1"/>
+                  <rect x="312" y="74"  width="172" height="14" rx="4" fill="rgba(50,120,255,0.14)" stroke="rgba(100,172,255,0.30)" stroke-width="1"/>
+                  <rect x="312" y="92"  width="172" height="14" rx="4" fill="rgba(50,120,255,0.14)" stroke="rgba(100,172,255,0.30)" stroke-width="1"/>
+                  <rect x="312" y="110" width="172" height="14" rx="4" fill="rgba(50,120,255,0.10)" stroke="rgba(100,168,255,0.22)" stroke-width="1"/>
+                  <rect x="320" y="60"  width="52" height="5" rx="2.5" fill="rgba(255,255,255,0.24)"/>
+                  <rect x="382" y="60"  width="32" height="5" rx="2.5" fill="rgba(130,200,255,0.60)"/>
+                  <rect x="320" y="78"  width="62" height="5" rx="2.5" fill="rgba(255,255,255,0.18)"/>
+                  <rect x="392" y="78"  width="24" height="5" rx="2.5" fill="rgba(130,200,255,0.42)"/>
+                  <rect x="320" y="96"  width="56" height="5" rx="2.5" fill="rgba(255,255,255,0.18)"/>
+                  <rect x="386" y="96"  width="28" height="5" rx="2.5" fill="rgba(130,200,255,0.42)"/>
+                  <rect x="320" y="114" width="46" height="4" rx="2"   fill="rgba(255,255,255,0.13)"/>
+                  <rect x="376" y="114" width="34" height="4" rx="2"   fill="rgba(130,200,255,0.30)"/>
                 </g>
               </svg>
             </div>
@@ -431,7 +461,7 @@
     <section class="case-studies" id="intro-2" aria-label="Case studies">
       <div class="case-studies-inner">
 
-        <div class="section-header" style="margin-bottom: 48px;">
+        <div class="section-header section-header--spacious">
           <span class="section-label">What We've Built for Our Partners</span>
           <h2 class="section-heading reveal">Case Studies</h2>
         </div>
@@ -463,14 +493,14 @@
             <div class="case-card-image">
               <img
                 src="images/case-stock-screening.jpg"
-                alt="Global Stock Screening and Analysis"
+                alt="Stock Screening and Analysis"
                 loading="lazy"
                 width="1200"
                 height="675"
               >
             </div>
             <div class="case-card-body">
-              <h3 class="case-card-title">Global Stock Screening and Analysis</h3>
+              <h3 class="case-card-title">Stock Screening and Analysis</h3>
               <p class="case-card-desc">
                 Leverages a proprietary database that aggregates financial data from global sources.
                 Supports filtering by custom metrics—fundamental or technical—and applies machine learning
@@ -533,7 +563,7 @@
       <div class="faq-grid-frame" aria-hidden="true"></div>
       <div class="faq-inner">
 
-        <div class="section-header" style="margin-bottom: 48px;">
+        <div class="section-header section-header--spacious">
           <h2 class="section-heading reveal">Frequently Asked Questions</h2>
         </div>
 
@@ -716,24 +746,6 @@
     </div>
   </footer>
 
-  <script src="js/main.js?v=2"></script>
-  <script>
-    (function () {
-      // --- Subtitle: word-by-word blur fade ---
-      var sub = document.querySelector('.hero-sub');
-      if (sub) {
-        var raw = sub.textContent.trim();
-        var words = raw.split(/\s+/);
-        var STAGGER = 0.042;
-        var BASE    = 0.05;
-        sub.innerHTML = words.map(function (word, i) {
-          var delay = (BASE + i * STAGGER).toFixed(3);
-          return '<span class="hero-sub-word" style="animation-delay:' + delay + 's">' + word + '</span>';
-        }).join(' ');
-        sub.style.opacity = '1';
-      }
-
-    })();
-  </script>
+  <script src="js/main.js?v=3"></script>
 </body>
 </html>

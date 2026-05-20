@@ -3,28 +3,50 @@
    ============================================================ */
 function initFAQ() {
   document.querySelectorAll('.faq-item').forEach(item => {
-    const btn   = item.querySelector('.faq-question');
-    const icon  = item.querySelector('.faq-icon');
+    const btn    = item.querySelector('.faq-question');
+    const icon   = item.querySelector('.faq-icon');
     const answer = item.querySelector('.faq-answer');
+    if (!btn || !answer) return;
 
     btn.addEventListener('click', () => {
       const isOpen = item.classList.contains('open');
 
       document.querySelectorAll('.faq-item.open').forEach(open => {
         const a = open.querySelector('.faq-answer');
+        const q = open.querySelector('.faq-question');
         a.style.maxHeight = a.scrollHeight + 'px';
         requestAnimationFrame(() => { a.style.maxHeight = '0'; });
         open.classList.remove('open');
         open.querySelector('.faq-icon').textContent = '+';
+        if (q) q.setAttribute('aria-expanded', 'false');
       });
 
       if (!isOpen) {
         item.classList.add('open');
         icon.textContent = '−';
         answer.style.maxHeight = answer.scrollHeight + 'px';
+        btn.setAttribute('aria-expanded', 'true');
+      } else {
+        btn.setAttribute('aria-expanded', 'false');
       }
     });
   });
+}
+
+function initHeroSub() {
+  const sub = document.querySelector('.hero-sub');
+  if (!sub) return;
+
+  const words = sub.textContent.trim().split(/\s+/);
+  const stagger = 0.042;
+  const base = 0.05;
+
+  sub.innerHTML = words.map((word, i) => {
+    const delay = (base + i * stagger).toFixed(3);
+    return `<span class="hero-sub-word" style="animation-delay:${delay}s">${word}</span>`;
+  }).join(' ');
+
+  sub.style.opacity = '1';
 }
 
 /* ============================================================
@@ -360,6 +382,7 @@ function initBookingForm() {
    INIT
    ============================================================ */
 document.addEventListener('DOMContentLoaded', () => {
+  initHeroSub();
   initFAQ();
   initNav();
   initReveal();
