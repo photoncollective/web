@@ -2013,7 +2013,7 @@ button:focus-visible,
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: calc(var(--nav-h) + 60px) var(--pad-x) 60px;
+  padding: calc(var(--nav-h) + var(--grid-inset)) var(--pad-x) calc(var(--grid-bottom) + var(--grid-inset));
 }
 
 .about-hero-inner {
@@ -2026,7 +2026,6 @@ button:focus-visible,
   align-items: center;
   position: relative;
   z-index: 1;
-  padding: 0 24px;
 }
 
 .about-text {
@@ -2037,7 +2036,7 @@ button:focus-visible,
 
 .about-heading {
   font-family: var(--font-serif);
-  font-size: clamp(32px, 3vw, 42px);
+  font-size: clamp(26px, 3.2vw, 44px);
   font-weight: 600;
   font-style: normal;
   line-height: 1.1;
@@ -2051,6 +2050,7 @@ button:focus-visible,
   font-weight: 400;
   line-height: 1.6;
   color: var(--text-85);
+  max-width: 65ch;
 }
 
 /* Photo strip — vertically centered alongside mission text.
@@ -2080,7 +2080,7 @@ button:focus-visible,
   flex-shrink: 0;
   border-radius: 4px;
   cursor: pointer;
-  transition: width 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition: width var(--dur) var(--ease-out);
 }
 
 .about-photo-col.pc-collapsed { width: 16px; }
@@ -2094,7 +2094,7 @@ button:focus-visible,
   object-fit: cover;
   object-position: center 15%;
   display: block;
-  transition: transform 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition: transform var(--dur) var(--ease-out);
 }
 
 /* offset = (strip − col) / 2 */
@@ -2148,10 +2148,15 @@ button:focus-visible,
 }
 
 @media (max-width: 809px) {
+  .about-hero {
+    justify-content: flex-start;
+    padding-inline: var(--grid-inset);
+    padding-top: calc(var(--nav-h) + clamp(56px, 12svh, 80px));
+  }
+
   .about-hero-inner {
     grid-template-columns: 1fr;
     gap: 40px;
-    padding: 0 20px;
     justify-items: center;
   }
   .about-text {
@@ -2168,9 +2173,16 @@ button:focus-visible,
     top: auto;
     left: auto;
     transform: none;
-    width: 300px;
+    width: min(300px, 100%);
     min-height: 68px;
     margin-top: 12px;
+  }
+
+  .about-photo-label,
+  .about-photo-label strong,
+  .about-photo-label-sub {
+    white-space: normal;
+    font-size: 14px;
   }
 
   /* Hide bottom gridline on mobile — it intersects content on small viewports */
@@ -2184,6 +2196,12 @@ button:focus-visible,
   .about-photo-col .about-photo-img { transform: translateX(-103px); }
   .about-photo-col.pc-expanded .about-photo-img { transform: translateX(-24px); }
   .about-photo-col.pc-collapsed .about-photo-img { transform: translateX(-142px); }
+}
+
+@media (max-width: 359px) {
+  .about-photo-label,
+  .about-photo-label strong,
+  .about-photo-label-sub { font-size: 12px; }
 }
 
 /* ============================================================
@@ -2212,7 +2230,16 @@ button:focus-visible,
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: calc(var(--nav-h) + 60px) var(--pad-x) 60px;
+  padding: calc(var(--nav-h) + var(--grid-inset)) var(--pad-x) calc(var(--grid-bottom) + var(--grid-inset));
+}
+
+/* Desktop booking: keep content inside grid frame on short viewports */
+@media (min-width: 1200px) and (max-height: 860px) {
+  .page-booking .booking-hero {
+    justify-content: flex-start;
+    padding-top: calc(var(--nav-h) + var(--grid-inset));
+    padding-bottom: calc(var(--grid-bottom) + var(--grid-inset));
+  }
 }
 
 .booking-inner {
@@ -2225,7 +2252,6 @@ button:focus-visible,
   align-items: center;
   position: relative;
   z-index: 1;
-  padding: 0 24px;
 }
 
 .booking-intro {
@@ -2237,7 +2263,7 @@ button:focus-visible,
 
 .booking-heading {
   font-family: var(--font-serif);
-  font-size: clamp(32px, 3vw, 42px);
+  font-size: clamp(26px, 3.2vw, 44px);
   font-weight: 600;
   line-height: 1.1;
   letter-spacing: -0.02em;
@@ -2252,6 +2278,7 @@ button:focus-visible,
   line-height: 1.6;
   color: var(--text-85);
   margin: 0;
+  max-width: 65ch;
 }
 
 .booking-meta {
@@ -2379,6 +2406,7 @@ button:focus-visible,
   margin-top: 4px;
   border: none;
   cursor: pointer;
+  min-height: 44px;
 }
 
 .booking-submit:disabled {
@@ -2430,17 +2458,17 @@ button:focus-visible,
 
 .form-label {
   font-family: var(--font-ui);
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 500;
   letter-spacing: 0.07em;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.40);
+  color: var(--text-38);
 }
 
 .form-input,
 .form-textarea {
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.09);
+  background: oklch(0.98 0.005 264 / 0.05);
+  border: 1px solid var(--border-subtle);
   border-radius: 8px;
   padding: 11px 13px;
   color: var(--text);
@@ -2455,14 +2483,14 @@ button:focus-visible,
 
 .form-input::placeholder,
 .form-textarea::placeholder {
-  color: rgba(255, 255, 255, 0.22);
+  color: var(--text-38);
 }
 
 .form-input:focus,
 .form-textarea:focus,
 .form-select:focus {
-  border-color: rgba(255, 255, 255, 0.22);
-  background: rgba(255, 255, 255, 0.07);
+  border-color: var(--border);
+  background: oklch(0.98 0.005 264 / 0.07);
 }
 
 .form-input:focus-visible,
@@ -2502,12 +2530,21 @@ button:focus-visible,
 .form-submit:active { transform: scale(0.98); }
 
 @media (max-width: 809px) {
+  .page-booking .hero-grid-frame,
+  .page-booking .hero-grid-h {
+    display: none;
+  }
+
+  .page-booking .booking-hero {
+    justify-content: flex-start;
+    padding: calc(var(--nav-h) + clamp(56px, 12svh, 80px)) 36px 56px;
+  }
+
   .booking-inner {
     grid-template-columns: 1fr;
-    gap: 40px;
+    gap: 36px;
     max-width: 100%;
     align-items: start;
-    padding: 24px 20px;
   }
 
   .booking-intro {
@@ -2515,6 +2552,16 @@ button:focus-visible,
     align-items: center;
     display: flex;
     flex-direction: column;
+    padding-inline: 8px;
+  }
+
+  .booking-lead {
+    max-width: 34ch;
+  }
+
+  .booking-form-wrap,
+  .booking-success {
+    padding: 24px 22px 28px;
   }
 
   .form-row {
