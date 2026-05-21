@@ -275,22 +275,53 @@ function initAboutPhotos() {
   const labels = [...document.querySelectorAll('.about-photo-label')];
   if (cols.length !== labels.length) return;
 
+  function setPortraitAlt(index) {
+    cols.forEach((col, j) => {
+      const img = col.querySelector('.about-photo-img');
+      if (!img) return;
+      const name = labels[j]?.querySelector('strong')?.textContent?.trim();
+      img.alt = j === index && name ? name : '';
+    });
+  }
+
+  function expandPhoto(index) {
+    cols.forEach((c, j) => {
+      c.classList.toggle('pc-expanded',  j === index);
+      c.classList.toggle('pc-collapsed', j !== index);
+    });
+    labels.forEach((l, j) => {
+      l.classList.toggle('pc-visible', j === index);
+    });
+    setPortraitAlt(index);
+  }
+
+  function collapsePhotos() {
+    cols.forEach(c => c.classList.remove('pc-expanded', 'pc-collapsed'));
+    labels.forEach(l => l.classList.remove('pc-visible'));
+    setPortraitAlt(-1);
+  }
+
   cols.forEach((col, i) => {
-    col.addEventListener('mouseenter', () => {
-      cols.forEach((c, j) => {
-        c.classList.toggle('pc-expanded',  j === i);
-        c.classList.toggle('pc-collapsed', j !== i);
-      });
-      labels.forEach((l, j) => {
-        l.classList.toggle('pc-visible', j === i);
-      });
+    col.setAttribute('tabindex', '0');
+    col.setAttribute('role', 'button');
+
+    col.addEventListener('mouseenter', () => expandPhoto(i));
+
+    col.addEventListener('click', () => {
+      if (col.classList.contains('pc-expanded')) collapsePhotos();
+      else expandPhoto(i);
+    });
+
+    col.addEventListener('keydown', e => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        if (col.classList.contains('pc-expanded')) collapsePhotos();
+        else expandPhoto(i);
+      }
     });
   });
 
-  strip.addEventListener('mouseleave', () => {
-    cols.forEach(c => c.classList.remove('pc-expanded', 'pc-collapsed'));
-    labels.forEach(l => l.classList.remove('pc-visible'));
-  });
+  strip.addEventListener('mouseleave', collapsePhotos);
 }
 
 /* ============================================================
@@ -365,7 +396,11 @@ function initBookingForm() {
 
     const mailto = `mailto:hello@photocollective.dev?subject=${encodeURIComponent('Discovery call request')}&body=${encodeURIComponent(body)}`;
 
-    if (submitBtn) submitBtn.disabled = true;
+    const submitLabel = submitBtn?.querySelector('span');
+    if (submitBtn) {
+      submitBtn.disabled = true;
+      if (submitLabel) submitLabel.textContent = 'Opening mail…';
+    }
 
     const mailBtn = document.getElementById('booking-success-mail');
     if (mailBtn) mailBtn.href = mailto;
