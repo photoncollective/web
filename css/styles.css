@@ -1008,7 +1008,7 @@ button:focus-visible,
   font-weight: 300;
   line-height: 1.6;
   color: var(--text-85);
-  max-width: 480px;
+  max-width: 580px;
 }
 
 /* ============================================================
@@ -1579,6 +1579,10 @@ button:focus-visible,
     --grid-bottom: 64px;
   }
 
+  .page-booking .booking-hero {
+    padding-inline: calc(var(--pad-x) + var(--grid-inset));
+  }
+
   /* Hide grid lines below the hero on mobile — keep only the hero frame */
   .hww-grid-frame,
   .faq-grid-frame { display: none; }
@@ -1645,7 +1649,7 @@ button:focus-visible,
   .footer-nav { justify-content: center; }
   .footer-copy { justify-content: center; text-align: center; }
 
-  .cta-section { padding: 56px var(--pad-x-mobile) 120px; }
+  .cta-section { padding: 80px var(--pad-x-mobile) 120px; }
 }
 
 /* ============================================================
@@ -2149,14 +2153,15 @@ button:focus-visible,
 
 @media (max-width: 809px) {
   .about-hero {
-    justify-content: flex-start;
-    padding-inline: var(--pad-x);
-    padding-top: calc(var(--nav-h) + clamp(56px, 12svh, 80px));
+    justify-content: center;
+    padding-inline: calc(var(--pad-x) + var(--grid-inset));
+    padding-top: calc(var(--nav-h) + 24px);
+    padding-bottom: 48px;
   }
 
   .about-hero-inner {
     grid-template-columns: 1fr;
-    gap: 40px;
+    gap: 56px;
     justify-items: center;
   }
   .about-text {
@@ -2184,6 +2189,8 @@ button:focus-visible,
     white-space: normal;
     font-size: 14px;
   }
+
+  .about-body--secondary { display: none; }
 
   /* Hide bottom gridline on mobile — it intersects content on small viewports */
   .about-hero .hero-grid-h-bot { display: none; }
@@ -2598,85 +2605,98 @@ button:focus-visible,
 }
 
 /* ============================================================
-   ABOUT TEAM SECTION
+   ABOUT APPROACH SECTION
    ============================================================ */
-.about-team {
+.about-approach {
   padding: var(--section-y) calc(var(--pad-x) + var(--grid-inset));
   background: var(--bg);
-  border-top: 1px solid var(--border-subtle);
 }
 
-.about-team-inner {
+.about-approach-inner {
   max-width: var(--container);
   margin: 0 auto;
-}
-
-.about-team-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
 }
 
-.about-team-card {
-  background: var(--surface-2);
-  border-radius: 10px;
-  padding: 32px;
+.about-approach-item {
+  padding-right: 40px;
+  margin-right: 40px;
+  border-right: 1px solid var(--border-subtle);
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
 
-.about-team-name {
-  font-family: var(--font-serif);
-  font-size: clamp(20px, 2vw, 26px);
-  font-weight: 600;
-  letter-spacing: -0.01em;
-  color: var(--text);
-  line-height: 1.15;
+.about-approach-item:last-child {
+  border-right: none;
+  margin-right: 0;
+  padding-right: 0;
 }
 
-.about-team-role {
+.about-approach-num {
   font-family: var(--font-ui);
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 1.5;
-  color: var(--text-85);
-}
-
-.about-team-body {
-  font-family: var(--font-ui);
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 1.6;
-  color: oklch(0.98 0.005 264 / 0.55);
-  margin-top: 4px;
-  flex: 1;
-}
-
-.about-team-school {
-  font-family: var(--font-ui);
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 500;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--text-38);
-  margin-top: 4px;
+}
+
+.about-approach-title {
+  font-family: var(--font-serif);
+  font-size: clamp(22px, 2.2vw, 28px);
+  font-weight: 500;
+  font-style: normal;
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+  color: var(--text);
+  margin: 0;
+}
+
+.about-approach-body {
+  font-family: var(--font-ui);
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--text-85);
+  margin: 0;
 }
 
 @media (min-width: 810px) and (max-width: 1199px) {
-  .about-team-grid {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 14px;
+  .about-approach-inner {
+    grid-template-columns: 1fr 1fr;
+    row-gap: 48px;
   }
-  .about-team-card { padding: 24px; }
+  .about-approach-item:nth-child(2),
+  .about-approach-item:nth-child(3) {
+    border-right: none;
+    margin-right: 0;
+    padding-right: 0;
+  }
 }
 
 @media (max-width: 809px) {
-  .about-team-grid {
-    grid-template-columns: 1fr;
-    gap: 14px;
+  .about-approach {
+    padding-top: 28px;
   }
-  .about-team-card { padding: 24px; }
+
+  .about-approach-inner {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+  .about-approach-item {
+    border-right: none;
+    margin-right: 0;
+    padding-right: 0;
+    border-bottom: 1px solid var(--border-subtle);
+    padding-bottom: 32px;
+    margin-bottom: 32px;
+  }
+  .about-approach-item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+    margin-bottom: 0;
+  }
 }
 
 /* ============================================================
@@ -2727,6 +2747,32 @@ button:focus-visible,
   background: var(--accent);
   flex-shrink: 0;
   margin-top: 9px;
+}
+
+.sec-std-term {
+  font-family: var(--font-ui);
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text);
+  min-width: 150px;
+  flex-shrink: 0;
+}
+
+.sec-std-desc {
+  font-family: var(--font-ui);
+  font-size: 15px;
+  font-weight: 400;
+  color: var(--text-85);
+}
+
+@media (max-width: 809px) {
+  .sec-std-term {
+    min-width: 120px;
+    font-size: 14px;
+  }
+  .sec-std-desc {
+    font-size: 14px;
+  }
 }
 
 @media (min-width: 810px) and (max-width: 1199px) {
