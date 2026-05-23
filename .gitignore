@@ -4,3 +4,5 @@
 *.log
 node_modules/
 .playwright-mcp/
+review-*.jpeg
+review-*.png
