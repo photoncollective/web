@@ -301,13 +301,21 @@ function initAboutPhotos() {
     setPortraitAlt(-1);
   }
 
+  let touchPending = false;
+
   cols.forEach((col, i) => {
     col.setAttribute('tabindex', '0');
     col.setAttribute('role', 'button');
 
+    col.addEventListener('touchstart', () => {
+      touchPending = true;
+      expandPhoto(i);
+    }, { passive: true });
+
     col.addEventListener('mouseenter', () => expandPhoto(i));
 
     col.addEventListener('click', () => {
+      if (touchPending) { touchPending = false; return; }
       if (col.classList.contains('pc-expanded')) collapsePhotos();
       else expandPhoto(i);
     });
@@ -322,6 +330,10 @@ function initAboutPhotos() {
   });
 
   strip.addEventListener('mouseleave', collapsePhotos);
+
+  document.addEventListener('touchstart', function(e) {
+    if (!strip.contains(e.target)) collapsePhotos();
+  }, { passive: true });
 }
 
 /* ============================================================
