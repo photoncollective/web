@@ -490,7 +490,7 @@ button:focus-visible,
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 80px;
+  gap: 56px;
 }
 
 @keyframes hero-fade-in {
@@ -627,7 +627,7 @@ button:focus-visible,
    VALUE PROP SECTION
    ============================================================ */
 .value-prop {
-  padding: var(--section-y) var(--pad-x);
+  padding: var(--section-y) calc(var(--pad-x) + var(--grid-inset));
   background: var(--bg);
   position: relative;
 }
@@ -652,7 +652,7 @@ button:focus-visible,
 
 .value-prop-heading {
   font-family: var(--font-serif);
-  font-size: 32px;
+  font-size: clamp(28px, 3vw, 40px);
   font-weight: 500;
   line-height: 1.2;
   letter-spacing: -0.01em;
@@ -677,7 +677,7 @@ button:focus-visible,
   display: flex;
   align-items: center;
   justify-content: center;
-  max-width: 280px;
+  max-width: 360px;
   justify-self: center;
 }
 
@@ -691,7 +691,7 @@ button:focus-visible,
    HOW WE WORK
    ============================================================ */
 .how-we-work {
-  padding: var(--section-y) var(--pad-x);
+  padding: var(--section-y) calc(var(--pad-x) + var(--grid-inset));
   background: var(--bg);
   position: relative;
   overflow: hidden;
@@ -717,7 +717,7 @@ button:focus-visible,
 
 .section-label {
   font-family: var(--font-ui);
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 500;
   letter-spacing: 0.1em;
   text-transform: uppercase;
@@ -815,7 +815,7 @@ button:focus-visible,
    CASE STUDIES
    ============================================================ */
 .case-studies {
-  padding: var(--section-y) var(--pad-x);
+  padding: var(--section-y) calc(var(--pad-x) + var(--grid-inset));
   background: var(--bg);
 }
 
@@ -875,7 +875,7 @@ button:focus-visible,
    FAQ
    ============================================================ */
 .faq {
-  padding: var(--section-y) var(--pad-x);
+  padding: var(--section-y) calc(var(--pad-x) + var(--grid-inset));
   background: var(--bg);
   position: relative;
 }
@@ -928,7 +928,7 @@ button:focus-visible,
   border: none;
   color: var(--text);
   font-family: var(--font-ui);
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 400;
   line-height: 1.45;
   letter-spacing: normal;
@@ -1369,9 +1369,9 @@ button:focus-visible,
 
   .about-hero-inner {
     grid-template-columns: minmax(0, 1fr) auto;
-    gap: 56px;
+    gap: 40px;
     align-items: center;
-    max-width: 560px;
+    max-width: 680px;
     margin-inline: auto;
     width: 100%;
   }
@@ -1419,7 +1419,7 @@ button:focus-visible,
   .page-booking .booking-inner {
     grid-template-columns: 1fr;
     gap: 40px;
-    max-width: 480px;
+    max-width: 560px;
     margin-inline: auto;
     width: 100%;
   }
@@ -1570,6 +1570,7 @@ button:focus-visible,
     gap: 0;
   }
   .hero-actions { margin-top: clamp(52px, 12vh, 96px); }
+  .hero-stats { margin-top: 20px; }
   .hero-eyebrow { font-size: 19px; }
   .hero-sub { margin-top: 8px; font-size: 16px; }
   .hero-grid-h-bot { bottom: 64px; }
@@ -1600,7 +1601,6 @@ button:focus-visible,
   }
 
   .value-prop-heading {
-    font-size: clamp(28px, 3vw, 40px);
     line-height: 1.15;
     letter-spacing: -0.02em;
     max-width: 600px;
@@ -1682,13 +1682,13 @@ button:focus-visible,
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 12px;
+  gap: 20px;
   box-sizing: border-box;
 }
 
 .sec-hero-heading {
   font-family: var(--font-serif);
-  font-size: clamp(36px, 3.2vw, 48px);
+  font-size: clamp(36px, 4.5vw, 60px);
   font-weight: 600;
   font-style: normal;
   line-height: 1.1;
@@ -1737,7 +1737,7 @@ button:focus-visible,
   border: 1px solid rgba(255, 255, 255, 0.18);
   border-radius: 100px;
   padding: 11px 20px;
-  margin-top: 96px;
+  margin-top: 64px;
   animation: fade-up 0.7s var(--ease) 0.5s both;
 }
 
@@ -1752,7 +1752,7 @@ button:focus-visible,
 /* ── Standard section ── */
 .sec-standard {
   background: var(--bg);
-  padding: 120px var(--pad-x) 80px;
+  padding: 120px calc(var(--pad-x) + var(--grid-inset)) 80px;
   position: relative;
 }
 
@@ -1801,7 +1801,7 @@ button:focus-visible,
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 100px 0 78px;
+  padding: 72px 0 56px;
   overflow: hidden;
   border-right: 1px solid var(--border-subtle);
   cursor: pointer;
@@ -1953,9 +1953,9 @@ button:focus-visible,
 @media (max-width: 809px) {
   .sec-br-mobile { display: initial; }
   .sec-hero-content { padding-inline: calc(var(--pad-x) + 24px); }
-  .sec-hero-heading { white-space: normal; font-size: clamp(28px, 8vw, 36px); }
+  .sec-hero-heading { white-space: normal; }
   .sec-hero-sub { max-width: none; font-size: 15px; line-height: 1.6; }
-  .sec-standard { padding: 60px var(--pad-x) 80px; }
+  .sec-standard { padding: 60px calc(var(--pad-x) + var(--grid-inset)) 80px; }
 
   /* Interleave: card1, desc1, card2, desc2, card3, desc3 */
   .sec-cards-wrap { display: flex; flex-direction: column; }
@@ -2036,7 +2036,7 @@ button:focus-visible,
 
 .about-heading {
   font-family: var(--font-serif);
-  font-size: clamp(26px, 3.2vw, 44px);
+  font-size: clamp(32px, 4.5vw, 56px);
   font-weight: 600;
   font-style: normal;
   line-height: 1.1;
@@ -2050,7 +2050,7 @@ button:focus-visible,
   font-weight: 400;
   line-height: 1.6;
   color: var(--text-85);
-  max-width: 65ch;
+  max-width: 52ch;
 }
 
 /* Photo strip — vertically centered alongside mission text.
@@ -2150,7 +2150,7 @@ button:focus-visible,
 @media (max-width: 809px) {
   .about-hero {
     justify-content: flex-start;
-    padding-inline: var(--grid-inset);
+    padding-inline: var(--pad-x);
     padding-top: calc(var(--nav-h) + clamp(56px, 12svh, 80px));
   }
 
@@ -2189,7 +2189,7 @@ button:focus-visible,
   .about-hero .hero-grid-h-bot { display: none; }
 
   /* Photo strip on mobile */
-  .about-photo-strip { width: 300px; height: 250px; }
+  .about-photo-strip { width: min(300px, 100%); height: 250px; }
   .about-photo-col { height: 250px; width: 95px; }
   .about-photo-col.pc-expanded { width: 252px; }
   .about-photo-img { width: 300px; height: 250px; }
@@ -2263,7 +2263,7 @@ button:focus-visible,
 
 .booking-heading {
   font-family: var(--font-serif);
-  font-size: clamp(26px, 3.2vw, 44px);
+  font-size: clamp(32px, 4.5vw, 56px);
   font-weight: 600;
   line-height: 1.1;
   letter-spacing: -0.02em;
@@ -2322,10 +2322,8 @@ button:focus-visible,
 }
 
 .booking-form-wrap {
-  background: var(--surface);
-  border: 1px solid var(--border-subtle);
-  border-radius: 10px;
-  padding: 28px 32px 32px;
+  border-top: 1px solid var(--border-subtle);
+  padding: 28px 0 0;
 }
 
 .booking-form {
@@ -2343,12 +2341,20 @@ button:focus-visible,
 .booking-form .form-select {
   padding: 11px 14px;
   font-size: 14px;
-  border-radius: 8px;
+  border-radius: 3px;
+  background: var(--surface);
+  border-color: var(--border-subtle);
 }
 
 .booking-form .form-textarea {
   min-height: 96px;
+  resize: none;
 }
+
+.booking-form .form-label {
+  color: var(--text-38);
+}
+
 
 .booking-form .form-row {
   gap: 16px;
@@ -2374,7 +2380,7 @@ button:focus-visible,
 
 .form-select {
   appearance: none;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8' fill='none'%3E%3Cpath d='M1 1.5L6 6.5L11 1.5' stroke='rgba(255,255,255,0.45)' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8' fill='none'%3E%3Cpath d='M1 1.5L6 6.5L11 1.5' stroke='rgba(255,255,255,0.55)' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
   background-position: right 13px center;
   padding-right: 36px;
@@ -2415,10 +2421,8 @@ button:focus-visible,
 }
 
 .booking-success {
-  background: var(--surface);
-  border: 1px solid var(--border-subtle);
-  border-radius: 10px;
-  padding: 28px 32px 32px;
+  border-top: 1px solid var(--border-subtle);
+  padding: 28px 0 0;
 }
 
 .booking-success-title {
@@ -2460,8 +2464,6 @@ button:focus-visible,
   font-family: var(--font-ui);
   font-size: 12px;
   font-weight: 500;
-  letter-spacing: 0.07em;
-  text-transform: uppercase;
   color: var(--text-38);
 }
 
@@ -2469,7 +2471,7 @@ button:focus-visible,
 .form-textarea {
   background: oklch(0.98 0.005 264 / 0.05);
   border: 1px solid var(--border-subtle);
-  border-radius: 8px;
+  border-radius: 3px;
   padding: 11px 13px;
   color: var(--text);
   font-family: var(--font-ui);
@@ -2561,10 +2563,190 @@ button:focus-visible,
 
   .booking-form-wrap,
   .booking-success {
-    padding: 24px 22px 28px;
+    padding-top: 24px;
   }
 
   .form-row {
     grid-template-columns: 1fr;
+  }
+}
+
+/* ============================================================
+   HERO STATS STRIP
+   ============================================================ */
+.hero-stats {
+  font-family: var(--font-ui);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-38);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: center;
+  animation: fade-up 0.6s var(--ease-out) 1.2s both;
+}
+
+.hero-stats-sep {
+  opacity: 0.4;
+}
+
+@media (max-width: 809px) {
+  .hero-stats { font-size: 11px; gap: 10px; }
+}
+
+/* ============================================================
+   ABOUT TEAM SECTION
+   ============================================================ */
+.about-team {
+  padding: var(--section-y) calc(var(--pad-x) + var(--grid-inset));
+  background: var(--bg);
+  border-top: 1px solid var(--border-subtle);
+}
+
+.about-team-inner {
+  max-width: var(--container);
+  margin: 0 auto;
+}
+
+.about-team-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.about-team-card {
+  background: var(--surface-2);
+  border-radius: 10px;
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.about-team-name {
+  font-family: var(--font-serif);
+  font-size: clamp(20px, 2vw, 26px);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--text);
+  line-height: 1.15;
+}
+
+.about-team-role {
+  font-family: var(--font-ui);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--text-85);
+}
+
+.about-team-body {
+  font-family: var(--font-ui);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.6;
+  color: oklch(0.98 0.005 264 / 0.55);
+  margin-top: 4px;
+  flex: 1;
+}
+
+.about-team-school {
+  font-family: var(--font-ui);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-38);
+  margin-top: 4px;
+}
+
+@media (min-width: 810px) and (max-width: 1199px) {
+  .about-team-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+  }
+  .about-team-card { padding: 24px; }
+}
+
+@media (max-width: 809px) {
+  .about-team-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+  .about-team-card { padding: 24px; }
+}
+
+/* ============================================================
+   SECURITY TECHNICAL DETAILS SECTION
+   ============================================================ */
+.sec-details {
+  background: var(--bg);
+  padding: 80px calc(var(--pad-x) + var(--grid-inset));
+  border-top: 1px solid var(--border-subtle);
+}
+
+.sec-details-inner {
+  max-width: var(--container);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
+  gap: 80px;
+  align-items: start;
+}
+
+.sec-details-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.sec-details-list li {
+  font-family: var(--font-ui);
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.6;
+  color: var(--text-85);
+  padding: 16px 0;
+  border-bottom: 1px solid var(--border-subtle);
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+.sec-details-list li:first-child {
+  border-top: 1px solid var(--border-subtle);
+}
+
+.sec-details-list li::before {
+  content: '';
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--accent);
+  flex-shrink: 0;
+  margin-top: 9px;
+}
+
+@media (min-width: 810px) and (max-width: 1199px) {
+  .sec-details-inner {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+  .sec-details { padding: 64px calc(var(--pad-x) + var(--grid-inset)); }
+}
+
+@media (max-width: 809px) {
+  .sec-details {
+    padding: 56px calc(var(--pad-x) + var(--grid-inset));
+  }
+  .sec-details-inner {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .sec-details-list li {
+    font-size: 14px;
+    padding: 14px 0;
   }
 }
