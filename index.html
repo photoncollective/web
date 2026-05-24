@@ -25,8 +25,101 @@
   <!-- Styles -->
   <link rel="stylesheet" href="css/styles.css">
 
+  <!-- SEO -->
+  <link rel="canonical" href="https://photocollective.dev/">
+
+  <!-- Structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Photon Collective",
+    "url": "https://photocollective.dev",
+    "description": "Photon Collective builds custom financial tools and workflows for investment teams.",
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "email": "hello@photocollective.dev",
+      "contactType": "sales"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "A new tech initiative feels like a big lift. Why should we choose you?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "We're built for financial firms that have been burned before—by consultants who over-promised, software that under-delivered, or implementations that created more problems than they solved. We run lean discovery first, so there's never a surprise scope or a solution looking for a problem. You'll know exactly what we're building, why, and what success looks like before we write a single line of code."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What does the engagement approach look like in practice?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "We start with a focused discovery workshop—usually 1–2 weeks—to map your current workflows, understand pain points, and define clear objectives. From there we move into design and rapid prototyping, so your team can interact with a real working version quickly. We iterate based on feedback and deliver production-ready software in phases so you always have something working and testable."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What do you actually build?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Custom internal tools and workflows—order management systems, data pipelines, AI-powered document processing, compliance and reconciliation automation, and proprietary screening or analytics platforms. We don't sell packaged software; everything we build is tailored to your firm's specific needs and existing infrastructure."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How much change is required on our side?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "We design explicitly for minimal disruption. Our goal is to integrate with your existing systems and workflows, not replace them wholesale. We typically need access to a few key stakeholders and your existing data sources. Most of our clients see meaningful results within the first few sprints without requiring major organizational change."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is this secure and compliant for regulated financial work?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Security and compliance are first-class requirements, not afterthoughts. We build with SOC 2-aligned practices, support deployment in your own cloud environment, and design data flows that respect your regulatory obligations—whether that's SEC, FINRA, or broader data-privacy requirements. We're happy to work alongside your compliance team throughout the engagement."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How long until we can test something live?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Most engagements produce a testable prototype within 3–4 weeks of the discovery phase. We prioritize shipping working software early—even if it's a slice of the full scope—so you can validate direction and give feedback before significant investment has been made."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do we have to commit upfront to rebuilding a full system? That sounds expensive.",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Not at all. We structure engagements in phases, and you can start with a single high-impact workflow or pain point. This keeps initial investment low and lets you see ROI before deciding to expand scope. We've helped firms go from a targeted automation to a full platform—but always at the pace that makes sense for them."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do you ensure we can trust the AI or any automated process?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "We build AI systems with human-in-the-loop checkpoints for any decision that matters. That means flagging edge cases for human review, providing full audit trails, and making model confidence levels visible. We treat automation as a way to eliminate tedious manual work, not as a black box that makes unsupervised decisions on critical operations."
+        }
+      }
+    ]
+  }
+  </script>
+
 </head>
 <body>
+
+  <a href="#main-content" class="skip-link">Skip to main content</a>
 
   <!-- SVG symbol defs — referenced via <use> throughout the page -->
   <svg xmlns="http://www.w3.org/2000/svg" style="position:absolute;width:0;height:0;overflow:hidden" aria-hidden="true">
@@ -94,7 +187,7 @@
     <div class="nav-backdrop" aria-hidden="true"></div>
   </header>
 
-  <main>
+  <main id="main-content">
 
     <!-- ======================================================
          HERO
@@ -182,7 +275,8 @@
           <img
             src="images/hero-data-viz.png"
             alt="Abstract data visualization"
-            loading="lazy"
+            loading="eager"
+            fetchpriority="high"
             width="1212"
             height="1200"
           >
@@ -702,19 +796,19 @@
       <!-- Client logo marquee -->
       <div class="logo-marquee" aria-hidden="true">
         <ul class="logo-track">
-          <li><img src="images/logo-amp.png" alt="" loading="lazy"></li>
-          <li><img src="images/logo-wmb.png" alt="" loading="lazy"></li>
-          <li><img src="images/logo-pcigs.png" alt="" loading="lazy"></li>
-          <li><img src="images/logo-ballantyne.png" alt="" loading="lazy"></li>
-          <li><img src="images/logo-new-dream.png" alt="" loading="lazy"></li>
-          <li><img src="images/logo-cardchamp.png" alt="" loading="lazy"></li>
+          <li><img src="images/logo-amp.png" alt="" loading="lazy" width="1759" height="382"></li>
+          <li><img src="images/logo-wmb.png" alt="" loading="lazy" width="1858" height="506"></li>
+          <li><img src="images/logo-pcigs.png" alt="" loading="lazy" width="2392" height="382"></li>
+          <li><img src="images/logo-ballantyne.png" alt="" loading="lazy" width="1398" height="508"></li>
+          <li><img src="images/logo-new-dream.png" alt="" loading="lazy" width="1406" height="508"></li>
+          <li><img src="images/logo-cardchamp.png" alt="" loading="lazy" width="2064" height="508"></li>
           <!-- duplicate for seamless loop -->
-          <li><img src="images/logo-amp.png" alt="" loading="lazy"></li>
-          <li><img src="images/logo-wmb.png" alt="" loading="lazy"></li>
-          <li><img src="images/logo-pcigs.png" alt="" loading="lazy"></li>
-          <li><img src="images/logo-ballantyne.png" alt="" loading="lazy"></li>
-          <li><img src="images/logo-new-dream.png" alt="" loading="lazy"></li>
-          <li><img src="images/logo-cardchamp.png" alt="" loading="lazy"></li>
+          <li><img src="images/logo-amp.png" alt="" loading="lazy" width="1759" height="382"></li>
+          <li><img src="images/logo-wmb.png" alt="" loading="lazy" width="1858" height="506"></li>
+          <li><img src="images/logo-pcigs.png" alt="" loading="lazy" width="2392" height="382"></li>
+          <li><img src="images/logo-ballantyne.png" alt="" loading="lazy" width="1398" height="508"></li>
+          <li><img src="images/logo-new-dream.png" alt="" loading="lazy" width="1406" height="508"></li>
+          <li><img src="images/logo-cardchamp.png" alt="" loading="lazy" width="2064" height="508"></li>
         </ul>
       </div>
     </section>
@@ -728,7 +822,7 @@
     <div class="footer-inner">
 
       <a href="index.html" class="footer-logo" aria-label="Photon Collective">
-        <img src="images/logo-dark.png" alt="" class="footer-brand-icon" aria-hidden="true">
+        <img src="images/logo-dark.png" alt="" class="footer-brand-icon" aria-hidden="true" width="148" height="104">
       </a>
 
       <div class="footer-center">
