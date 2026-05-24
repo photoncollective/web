@@ -1727,6 +1727,33 @@ button:focus-visible,
   letter-spacing: -0.02em;
   color: var(--text);
   animation: fade-up 0.7s var(--ease) 0.1s both;
+  position: relative;
+  overflow: visible;
+}
+
+.sec-sparkles {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: visible;
+}
+
+.sec-sparkle {
+  position: absolute;
+  left: var(--sx, 50%);
+  top:  var(--sy, 50%);
+  width:  var(--ss, 10px);
+  height: var(--ss, 10px);
+  transform: translate(-50%, -50%) scale(0);
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10'%3E%3Cpath fill='white' d='M5 0C5.5 3.5 6.5 4.5 10 5C6.5 5.5 5.5 6.5 5 10C4.5 6.5 3.5 5.5 0 5C3.5 4.5 4.5 3.5 5 0Z'/%3E%3C/svg%3E") no-repeat center/contain;
+  opacity: 0;
+  animation: sparkle-appear var(--sd, 3s) var(--sy-d, 0s) infinite ease-in-out;
+}
+
+@keyframes sparkle-appear {
+  0%, 100%  { opacity: 0;    transform: translate(-50%, -50%) scale(0)    rotate(0deg); }
+  35%       { opacity: 0.85; transform: translate(-50%, -50%) scale(1)    rotate(20deg); }
+  65%       { opacity: 0.55; transform: translate(-50%, -50%) scale(0.75) rotate(-8deg); }
 }
 
 @media (min-width: 810px) {
