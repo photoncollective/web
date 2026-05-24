@@ -16,6 +16,14 @@
 
   /* Accent */
   --accent:        oklch(0.52 0.22 264);
+  --accent-text:   #7e8bff;            /* legibility-tuned accent for inline text on dark bg */
+
+  /* Error */
+  --error:         #f0a8a8;
+
+  /* Form inputs */
+  --input-bg:      oklch(0.98 0.005 264 / 0.05);
+  --input-bg-focus: oklch(0.98 0.005 264 / 0.07);
 
   /* Borders */
   --border:        oklch(0.98 0.005 264 / 0.14);
@@ -216,7 +224,7 @@ button:focus-visible,
   background: rgba(0, 0, 0, 0.48);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  border-bottom: 1px solid var(--border-subtle);
 }
 
 .nav-inner {
@@ -1472,7 +1480,7 @@ button:focus-visible,
     background: rgba(0, 0, 0, 0.48);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    border-bottom: 1px solid var(--border-subtle);
     padding: 36px var(--pad-x-mobile) 34px;
     gap: 4px;
     z-index: 99;
@@ -1671,6 +1679,7 @@ button:focus-visible,
 .sec-hero-bg {
   position: absolute;
   inset: 0;
+  background-image: url('../images/security-hero-bg.png');
   background-size: cover;
   background-position: center 60%;
   z-index: 0;
@@ -1726,6 +1735,22 @@ button:focus-visible,
   display: inline-block;
   animation: word-in 0.55s var(--ease) both;
 }
+
+.sec-word:nth-of-type(1)  { animation-delay: 0.30s; }
+.sec-word:nth-of-type(2)  { animation-delay: 0.36s; }
+.sec-word:nth-of-type(3)  { animation-delay: 0.42s; }
+.sec-word:nth-of-type(4)  { animation-delay: 0.48s; }
+.sec-word:nth-of-type(5)  { animation-delay: 0.54s; }
+.sec-word:nth-of-type(6)  { animation-delay: 0.60s; }
+.sec-word:nth-of-type(7)  { animation-delay: 0.66s; }
+.sec-word:nth-of-type(8)  { animation-delay: 0.72s; }
+.sec-word:nth-of-type(9)  { animation-delay: 0.80s; }
+.sec-word:nth-of-type(10) { animation-delay: 0.86s; }
+.sec-word:nth-of-type(11) { animation-delay: 0.92s; }
+.sec-word:nth-of-type(12) { animation-delay: 0.98s; }
+.sec-word:nth-of-type(13) { animation-delay: 1.04s; }
+.sec-word:nth-of-type(14) { animation-delay: 1.10s; }
+.sec-word:nth-of-type(15) { animation-delay: 1.16s; }
 
 /* Mobile-only line breaks in sec-hero-sub */
 .sec-br-mobile { display: none; }
@@ -1787,7 +1812,7 @@ button:focus-visible,
   color: var(--text);
 }
 
-.sec-highlight { color: #7e8bff; font-style: normal; }
+.sec-highlight { color: var(--accent-text); }
 
 /* Cards + text text row wrapper — sits as single flex item so no gap bleeds in */
 .sec-cards-wrap { width: 100%; max-width: 920px; }
@@ -1839,7 +1864,7 @@ button:focus-visible,
 .sec-card-icon {
   width: 68px;
   height: 68px;
-  color: rgba(255, 255, 255, 0.85);
+  color: var(--text-85);
   flex-shrink: 0;
   transition: color 0.25s ease;
 }
@@ -2403,14 +2428,14 @@ button:focus-visible,
   font-family: var(--font-ui);
   font-size: 13px;
   line-height: 1.45;
-  color: #f0a8a8;
+  color: var(--error);
   margin: 0;
 }
 
 .form-field.has-error .form-input,
 .form-field.has-error .form-textarea,
 .form-field.has-error .form-select {
-  border-color: rgba(240, 168, 168, 0.55);
+  border-color: color-mix(in oklch, var(--error) 55%, transparent);
 }
 
 .booking-submit {
@@ -2476,7 +2501,7 @@ button:focus-visible,
 
 .form-input,
 .form-textarea {
-  background: oklch(0.98 0.005 264 / 0.05);
+  background: var(--input-bg);
   border: 1px solid var(--border-subtle);
   border-radius: 3px;
   padding: 11px 13px;
@@ -2499,7 +2524,7 @@ button:focus-visible,
 .form-textarea:focus,
 .form-select:focus {
   border-color: var(--border);
-  background: oklch(0.98 0.005 264 / 0.07);
+  background: var(--input-bg-focus);
 }
 
 .form-input:focus-visible,
