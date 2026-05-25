@@ -631,6 +631,9 @@ button:focus-visible,
 }
 
 
+
+.btn-label-narrow { display: none; }
+
 .btn-hero-border {
   font-size: 14px;
   padding: 10px 20px;
@@ -1436,7 +1439,6 @@ button:focus-visible,
   }
 
   .page-booking .booking-hero {
-    justify-content: flex-start;
     min-height: 100svh;
     padding-top: calc(var(--nav-h) + clamp(56px, 12svh, 80px));
     padding-bottom: calc(var(--grid-bottom) + var(--grid-inset));
@@ -1576,7 +1578,7 @@ button:focus-visible,
   }
 
   .hero {
-    padding: 100px var(--pad-x-mobile) 64px;
+    padding: 80px var(--pad-x-mobile) 64px;
     min-height: 100vh;
     min-height: 100svh;
   }
@@ -1593,7 +1595,7 @@ button:focus-visible,
   .hero-content {
     align-self: stretch;
     justify-content: flex-start;
-    padding-top: clamp(100px, 18svh, 160px);
+    padding-top: clamp(80px, 15svh, 140px);
     gap: 0;
   }
   .hero-actions { margin-top: clamp(52px, 12vh, 96px); }
@@ -1677,6 +1679,36 @@ button:focus-visible,
   .footer-copy { justify-content: center; text-align: center; }
 
   .cta-section { padding: 80px var(--pad-x-mobile) 120px; }
+
+  /* Home page sections — reduce side padding to match CTA (20px) */
+  .value-prop   { padding-inline: var(--pad-x-mobile); }
+  .how-we-work  { padding-inline: var(--pad-x-mobile); }
+  .case-studies { padding-inline: var(--pad-x-mobile); }
+  .faq          { padding-inline: var(--pad-x-mobile); }
+}
+
+/* Tall phones (XR / 12 Pro / 14+) — push hero content lower so
+   buttons sit closer to the bottom grid line.
+   Excluded from narrow screens (< 375px) where content is already tall. */
+@media (min-width: 375px) and (max-width: 809px) and (min-height: 720px) {
+  .hero-content {
+    padding-top: clamp(120px, 20svh, 190px);
+  }
+}
+
+/* Very narrow phones (≤ 374px, e.g. 360px) — shrink heading font and
+   tighten cluster padding to prevent single-word-per-line wrapping */
+@media (max-width: 374px) {
+  .hero-text-cluster {
+    padding-inline: 4px;
+  }
+  .hero-actions {
+    margin-top: clamp(64px, 14vh, 120px);
+    padding-inline: 8px;
+    flex-wrap: nowrap;
+  }
+  .btn-label-wide { display: none; }
+  .btn-label-narrow { display: inline; }
 }
 
 /* ============================================================
@@ -1718,6 +1750,11 @@ button:focus-visible,
   box-sizing: border-box;
 }
 
+@keyframes heading-glisten {
+  from { background-position: 100% 50%; opacity: 1; }
+  to   { background-position:   0% 50%; opacity: 1; }
+}
+
 .sec-hero-heading {
   font-family: var(--font-serif);
   font-size: clamp(36px, 4.5vw, 60px);
@@ -1726,7 +1763,39 @@ button:focus-visible,
   line-height: 1.1;
   letter-spacing: -0.02em;
   color: var(--text);
+  position: relative;
   animation: fade-up 0.7s var(--ease) 0.1s both;
+}
+
+/*
+ * Glisten overlay: a duplicate text layer clipped to a sweeping white band.
+ * Using ::after + content:attr() means the base heading is always normal colour
+ * and the glisten is purely additive — one clean left→right pass, no dim valleys.
+ * At bg-pos 100% (start) and 0% (end) the white band is outside the visible
+ * gradient window, so the overlay is fully transparent before and after.
+ */
+.sec-hero-heading::after {
+  content: attr(data-text);
+  position: absolute;
+  inset: 0;
+  white-space: inherit;
+  background: linear-gradient(
+    90deg,
+    rgba(255,255,255,0)    0%,
+    rgba(255,255,255,0)   34%,
+    rgba(255,255,255,0.5) 44%,
+    rgba(255,255,255,1)   50%,
+    rgba(255,255,255,0.5) 56%,
+    rgba(255,255,255,0)   66%,
+    rgba(255,255,255,0)  100%
+  );
+  background-size: 300% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  pointer-events: none;
+  opacity: 0;
+  animation: heading-glisten 2.5s ease-in-out 0.9s 1 forwards;
 }
 
 @media (min-width: 810px) {
@@ -2002,8 +2071,8 @@ button:focus-visible,
   .sec-br-mobile { display: initial; }
   .sec-hero-content { padding-inline: calc(var(--pad-x) + 24px); }
   .sec-hero-heading { white-space: normal; }
-  .sec-hero-sub { max-width: none; font-size: 15px; line-height: 1.6; }
-  .sec-standard { padding: 60px calc(var(--pad-x) + var(--grid-inset)) 80px; }
+  .sec-hero-sub { max-width: none; font-size: 16px; line-height: 1.6; }
+  .sec-standard { padding: 60px var(--pad-x-mobile) 80px; }
 
   /* Interleave: card1, desc1, card2, desc2, card3, desc3 */
   .sec-cards-wrap { display: flex; flex-direction: column; }
@@ -2049,6 +2118,17 @@ button:focus-visible,
   .sec-badge-pill img.badge-wide { width: 62px; height: 40px; }
 }
 
+/* Narrow phones — suppress forced mid-line breaks so "as" can't
+   land alone on its own line; also reduce content padding */
+@media (max-width: 414px) {
+  .sec-br-mobile { display: none; }
+  .sec-hero-content { padding-inline: 24px; }
+  .sec-hero-sub { font-size: 16px; text-wrap: balance; }
+}
+@media (max-width: 374px) {
+  .sec-hero-content { padding-inline: 20px; }
+}
+
 /* ============================================================
    ABOUT US PAGE
    ============================================================ */
@@ -2086,7 +2166,6 @@ button:focus-visible,
   font-family: var(--font-serif);
   font-size: clamp(32px, 4.5vw, 56px);
   font-weight: 600;
-  font-style: normal;
   line-height: 1.1;
   letter-spacing: -0.02em;
   color: var(--text);
@@ -2195,12 +2274,9 @@ button:focus-visible,
   transform: translateY(0);
 }
 
-@media (max-width: 809px) {
+@media (max-width: 1000px) {
   .about-hero {
-    justify-content: center;
-    padding-inline: calc(var(--pad-x) + var(--grid-inset));
-    padding-top: calc(var(--nav-h) + 24px);
-    padding-bottom: 48px;
+    padding-inline: max(36px, var(--pad-x));
   }
 
   .about-hero-inner {
@@ -2212,7 +2288,7 @@ button:focus-visible,
     text-align: center;
     align-items: center;
   }
-  .about-photos { align-items: center; gap: 12px; }
+  .about-photos { align-items: center; gap: 12px; width: 100%; }
 
   /* Labels: in-flow below strip, always reserve space so hover reveals them.
      On real touch devices no hover fires so the reserved area stays empty;
@@ -2247,6 +2323,27 @@ button:focus-visible,
   .about-photo-col .about-photo-img { transform: translateX(-103px); }
   .about-photo-col.pc-expanded .about-photo-img { transform: translateX(-24px); }
   .about-photo-col.pc-collapsed .about-photo-img { transform: translateX(-142px); }
+}
+
+/* Mobile only — top-flush positioning (tablet uses desktop center via base rule) */
+@media (max-width: 809px) {
+  .about-hero {
+    justify-content: flex-start;
+    padding-top: calc(var(--nav-h) + clamp(56px, 12svh, 80px));
+    padding-bottom: 56px;
+  }
+}
+
+/* Very narrow phones (≤ 374px) — hide gridlines, tighten padding, shrink text */
+@media (max-width: 374px) {
+  .about-hero {
+    padding-inline: 20px;
+  }
+  .about-hero .hero-grid-frame,
+  .about-hero .hero-grid-h-top { display: none; }
+  .about-text {
+    padding-inline: 16px;
+  }
 }
 
 @media (max-width: 359px) {
@@ -2708,14 +2805,21 @@ button:focus-visible,
 
 @media (min-width: 810px) and (max-width: 1199px) {
   .about-approach-inner {
-    grid-template-columns: 1fr 1fr;
-    row-gap: 48px;
+    grid-template-columns: 1fr;
+    gap: 0;
   }
-  .about-approach-item:nth-child(2),
-  .about-approach-item:nth-child(3) {
+  .about-approach-item {
     border-right: none;
     margin-right: 0;
     padding-right: 0;
+    border-bottom: 1px solid var(--border-subtle);
+    padding-bottom: 32px;
+    margin-bottom: 32px;
+  }
+  .about-approach-item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+    margin-bottom: 0;
   }
 }
 
@@ -2829,7 +2933,7 @@ button:focus-visible,
 
 @media (max-width: 809px) {
   .sec-details {
-    padding: 56px calc(var(--pad-x) + var(--grid-inset));
+    padding: 56px var(--pad-x-mobile);
   }
   .sec-details-inner {
     grid-template-columns: 1fr;
