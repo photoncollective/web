@@ -12,7 +12,6 @@
   --text:          oklch(0.98 0.005 264);
   --text-85:       oklch(0.98 0.005 264 / 0.85);
   --text-38:       oklch(0.98 0.005 264 / 0.38);
-  --text-muted:    oklch(0.82 0.01 264);
 
   /* Accent */
   --accent:        oklch(0.52 0.22 264);
@@ -1065,7 +1064,7 @@ button:focus-visible,
 .cta-sub {
   font-family: var(--font-ui);
   font-size: 16px;
-  font-weight: 300;
+  font-weight: 400;
   line-height: 1.6;
   color: var(--text-85);
   max-width: 580px;
@@ -1214,7 +1213,7 @@ button:focus-visible,
   align-items: center;
   gap: 0;
   font-size: 0;
-  color: rgba(255, 255, 255, 0.78);
+  color: var(--text-85);
   transition: color var(--dur) var(--ease), transform var(--dur) var(--ease);
 }
 
@@ -1615,7 +1614,6 @@ button:focus-visible,
 
   .hero-bolt-hero { display: none; }
   .hero-headline { font-size: clamp(32px, 8vw, 42px); }
-  .hero-eyebrow { font-size: 15px; }
   .hero-sub { line-height: 1.6; }
   .hero-text-cluster {
     gap: 16px;
@@ -2552,7 +2550,7 @@ button:focus-visible,
 }
 
 .form-required {
-  color: rgba(255, 255, 255, 0.45);
+  color: var(--text-38);
   font-weight: 400;
 }
 
@@ -2685,7 +2683,7 @@ button:focus-visible,
 .form-select:focus-visible,
 .form-submit:focus-visible,
 .booking-submit:focus-visible {
-  outline: 2px solid rgba(255, 255, 255, 0.45);
+  outline: 2px solid var(--focus-ring);
   outline-offset: 2px;
 }
 
