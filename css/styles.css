@@ -745,6 +745,30 @@ button:focus-visible,
   margin-bottom: 48px;
 }
 
+.section-header--split {
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  gap: 0 clamp(32px, 4vw, 64px);
+  align-items: center;
+  text-align: left;
+  margin-bottom: 64px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border-subtle);
+}
+
+.section-header--split .section-header-title {
+  /* occupies left column naturally */
+}
+
+.section-header--split .section-label {
+  display: block;
+  margin-bottom: 12px;
+}
+
+.section-header--split .section-intro {
+  margin-top: 0;
+}
+
 .section-label {
   font-family: var(--font-ui);
   font-size: 13px;
@@ -762,6 +786,12 @@ button:focus-visible,
   letter-spacing: -0.02em;
   line-height: 1.1;
   color: var(--text);
+}
+
+.section-intro {
+  font-size: 15px;
+  line-height: 1.55;
+  color: var(--text-85);
 }
 
 /* ── How We Work bento grid ── */
@@ -857,7 +887,7 @@ button:focus-visible,
 .case-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 50px;
+  gap: 48px;
   margin-top: 0;
 }
 
@@ -1009,7 +1039,7 @@ button:focus-visible,
   position: relative;
   overflow: hidden;
   background: var(--bg);
-  padding: 80px var(--pad-x) 160px;
+  padding: var(--section-y) var(--pad-x) 160px;
 }
 
 .cta-inner {
@@ -1618,6 +1648,13 @@ button:focus-visible,
 
   .section-header { margin-bottom: 36px; }
   .section-header--spacious { margin-bottom: 36px; }
+  .section-header--split {
+    grid-template-columns: 1fr;
+    margin-bottom: 40px;
+  }
+  .section-header--split .section-intro {
+    padding-top: 0;
+  }
 
   .value-prop-inner {
     display: flex;
