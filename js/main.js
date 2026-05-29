@@ -50,6 +50,23 @@ function initHeroSub() {
 }
 
 /* ============================================================
+   SCROLL PILL NAV
+   ============================================================ */
+function initScrollPill() {
+  const nav = document.querySelector('.nav');
+  const navInner = document.querySelector('.nav-inner');
+  if (!nav || !navInner) return;
+
+  const update = () => {
+    const scrolled = window.scrollY > 50;
+    nav.classList.toggle('is-scrolled', scrolled);
+    navInner.classList.toggle('is-scrolled', scrolled);
+  };
+  window.addEventListener('scroll', update, { passive: true });
+  update();
+}
+
+/* ============================================================
    MOBILE NAV
    ============================================================ */
 function initNav() {
@@ -432,6 +449,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initHeroSub();
   initFAQ();
   initNav();
+  initScrollPill();
   initReveal();
   initSecurityCards();
   initAboutPhotos();
