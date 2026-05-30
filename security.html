@@ -12,9 +12,11 @@
   <meta property="og:site_name" content="Photon Collective">
   <meta property="og:title" content="Security — Photon Collective">
   <meta property="og:description" content="Photon Collective builds everything with security as the foundation, so you can focus on what's urgent.">
+  <meta property="og:image" content="https://photocollective.dev/images/hero-data-viz.png">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Security — Photon Collective">
   <meta name="twitter:description" content="Photon Collective builds everything with security as the foundation, so you can focus on what's urgent.">
+  <meta name="twitter:image" content="https://photocollective.dev/images/hero-data-viz.png">
   <meta name="theme-color" content="#0c0d12">
 
   <!-- Favicon -->
@@ -23,6 +25,7 @@
   <link rel="apple-touch-icon" href="images/favicon-dark.png">
 
   <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Infant:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Inter:wght@400;500;600&display=swap">
 
@@ -39,6 +42,10 @@
     "@type": "Organization",
     "name": "Photon Collective",
     "url": "https://photocollective.dev",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://photocollective.dev/images/logo-dark.png"
+    },
     "description": "Photon Collective builds custom financial tools and workflows for investment teams.",
     "contactPoint": {
       "@type": "ContactPoint",
@@ -67,13 +74,13 @@
     <nav class="nav" role="navigation" aria-label="Main navigation">
       <div class="nav-inner">
 
-        <a href="index.html" class="nav-logo" aria-label="Photon Collective home">
+        <a href="/" class="nav-logo" aria-label="Photon Collective home">
           <svg class="nav-logo-wordmark" viewBox="0 0 81 26" fill="none" aria-hidden="true"><use href="#wordmark"/></svg>
           <span class="sr-only">photon collective</span>
         </a>
 
         <div class="nav-links">
-          <a href="index.html">Home</a>
+          <a href="/">Home</a>
           <a href="security.html" class="active">Security</a>
           <a href="about-us.html">About Us</a>
         </div>
@@ -94,7 +101,7 @@
 
     </nav>
     <div class="nav-mobile" role="menu">
-      <a href="index.html" role="menuitem">Home</a>
+      <a href="/" role="menuitem">Home</a>
       <a href="security.html" role="menuitem" class="active">Security</a>
       <a href="about-us.html" role="menuitem">About Us</a>
       <a href="booking.html" role="menuitem" class="nav-mobile-cta">
@@ -144,9 +151,9 @@
 
         <!-- Badge pill -->
         <div class="sec-badge-pill" aria-label="Security certifications">
-          <img src="images/badge-1.png" alt="" class="badge-sq" width="802" height="802">
-          <img src="images/badge-2.png" alt="" class="badge-wide" width="464" height="300">
-          <img src="images/badge-3.png" alt="" class="badge-sq" width="192" height="192">
+          <img src="images/badge-1.png" alt="Data ownership certification badge" class="badge-sq" width="802" height="802">
+          <img src="images/badge-2.png" alt="Secure storage certification badge" class="badge-wide" width="464" height="300">
+          <img src="images/badge-3.png" alt="Permission control certification badge" class="badge-sq" width="192" height="192">
         </div>
       </div>
 
@@ -159,7 +166,7 @@
       <div class="sec-standard-inner">
 
         <div class="sec-standard-header">
-          <p class="section-label">Your Standard is Our Minimum</p>
+          <h2 class="section-label">Your Standard is Our Minimum</h2>
           <p class="sec-standard-body">
             Photon prioritizes security with <span class="sec-highlight">end-to-end encryption</span> and regular <span class="sec-highlight">third-party audits</span>. We ensure your data remains protected and compliant with the highest privacy standards.
           </p>
@@ -229,7 +236,7 @@
     <div class="sec-details-inner">
 
       <div class="sec-details-header">
-        <span class="section-label">Technical Standards</span>
+        <h2 class="section-label">Technical Standards</h2>
       </div>
 
       <ul class="sec-details-list">
@@ -288,19 +295,19 @@
     <!-- Client logo marquee -->
     <div class="logo-marquee" aria-hidden="true">
       <ul class="logo-track">
-        <li><img src="images/logo-amp.png" alt="" loading="lazy" width="1759" height="382"></li>
-        <li><img src="images/logo-wmb.png" alt="" loading="lazy" width="1858" height="506"></li>
-        <li><img src="images/logo-pcigs.png" alt="" loading="lazy" width="2392" height="382"></li>
-        <li><img src="images/logo-ballantyne.png" alt="" loading="lazy" width="1398" height="508"></li>
-        <li><img src="images/logo-new-dream.png" alt="" loading="lazy" width="1406" height="508"></li>
-        <li><img src="images/logo-cardchamp.png" alt="" loading="lazy" width="2064" height="508"></li>
+        <li><img src="images/logo-amp.png" alt="AMP logo" loading="lazy" width="1759" height="382"></li>
+        <li><img src="images/logo-wmb.png" alt="Wholesale Mortgage Bankers logo" loading="lazy" width="1858" height="506"></li>
+        <li><img src="images/logo-pcigs.png" alt="PCI Government Services logo" loading="lazy" width="2392" height="382"></li>
+        <li><img src="images/logo-ballantyne.png" alt="Ballantyne Capital logo" loading="lazy" width="1398" height="508"></li>
+        <li><img src="images/logo-new-dream.png" alt="New Dream logo" loading="lazy" width="1406" height="508"></li>
+        <li><img src="images/logo-cardchamp.png" alt="CardChamp logo" loading="lazy" width="2064" height="508"></li>
         <!-- duplicate for seamless loop -->
-        <li><img src="images/logo-amp.png" alt="" loading="lazy" width="1759" height="382"></li>
-        <li><img src="images/logo-wmb.png" alt="" loading="lazy" width="1858" height="506"></li>
-        <li><img src="images/logo-pcigs.png" alt="" loading="lazy" width="2392" height="382"></li>
-        <li><img src="images/logo-ballantyne.png" alt="" loading="lazy" width="1398" height="508"></li>
-        <li><img src="images/logo-new-dream.png" alt="" loading="lazy" width="1406" height="508"></li>
-        <li><img src="images/logo-cardchamp.png" alt="" loading="lazy" width="2064" height="508"></li>
+        <li><img src="images/logo-amp.png" alt="AMP logo" loading="lazy" width="1759" height="382"></li>
+        <li><img src="images/logo-wmb.png" alt="Wholesale Mortgage Bankers logo" loading="lazy" width="1858" height="506"></li>
+        <li><img src="images/logo-pcigs.png" alt="PCI Government Services logo" loading="lazy" width="2392" height="382"></li>
+        <li><img src="images/logo-ballantyne.png" alt="Ballantyne Capital logo" loading="lazy" width="1398" height="508"></li>
+        <li><img src="images/logo-new-dream.png" alt="New Dream logo" loading="lazy" width="1406" height="508"></li>
+        <li><img src="images/logo-cardchamp.png" alt="CardChamp logo" loading="lazy" width="2064" height="508"></li>
       </ul>
     </div>
   </section>
@@ -311,13 +318,13 @@
   <footer class="footer" role="contentinfo">
     <div class="footer-inner">
 
-      <a href="index.html" class="footer-logo" aria-label="Photon Collective">
+      <a href="/" class="footer-logo" aria-label="Photon Collective">
         <img src="images/logo-dark.png" alt="" class="footer-brand-icon" aria-hidden="true" width="148" height="104">
       </a>
 
       <div class="footer-center">
         <nav class="footer-nav" aria-label="Footer navigation">
-          <a href="index.html">Home</a>
+          <a href="/">Home</a>
           <a href="about-us.html">About Us</a>
           <a href="security.html">Security</a>
         </nav>

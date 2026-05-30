@@ -292,30 +292,25 @@ function initAboutPhotos() {
   const labels = [...document.querySelectorAll('.about-photo-label')];
   if (cols.length !== labels.length) return;
 
-  function setPortraitAlt(index) {
-    cols.forEach((col, j) => {
-      const img = col.querySelector('.about-photo-img');
-      if (!img) return;
-      const name = labels[j]?.querySelector('strong')?.textContent?.trim();
-      img.alt = j === index && name ? name : '';
-    });
-  }
-
   function expandPhoto(index) {
     cols.forEach((c, j) => {
       c.classList.toggle('pc-expanded',  j === index);
       c.classList.toggle('pc-collapsed', j !== index);
+      const img = c.querySelector('.about-photo-img');
+      if (img) img.setAttribute('aria-hidden', j !== index ? 'true' : 'false');
     });
     labels.forEach((l, j) => {
       l.classList.toggle('pc-visible', j === index);
     });
-    setPortraitAlt(index);
   }
 
   function collapsePhotos() {
-    cols.forEach(c => c.classList.remove('pc-expanded', 'pc-collapsed'));
+    cols.forEach(c => {
+      c.classList.remove('pc-expanded', 'pc-collapsed');
+      const img = c.querySelector('.about-photo-img');
+      if (img) img.removeAttribute('aria-hidden');
+    });
     labels.forEach(l => l.classList.remove('pc-visible'));
-    setPortraitAlt(-1);
   }
 
   let touchPending = false;
