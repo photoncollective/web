@@ -1,8 +1,19 @@
+# OS
 .DS_Store
+
+# Environment
 .env
 .env.*
+
+# Logs & test artifacts
 *.log
-node_modules/
 .playwright-mcp/
 review-*.jpeg
 review-*.png
+
+# Editor / tool configs (local only)
+.cursor/
+.claude/
+
+# Dependencies
+node_modules/
