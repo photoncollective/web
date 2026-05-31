@@ -355,6 +355,8 @@ function initBookingForm() {
   const form = document.getElementById('booking-form');
   if (!form) return;
 
+  const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyBtJxjDk5Kc8GQj96CsjOnUiNTAwmOuLtRzkBdySON7X-KXRqF467LQhNiRSyS2AM1/exec';
+
   const formWrap = document.getElementById('booking-form-wrap');
   const success = document.getElementById('booking-success');
   const errorEl = document.getElementById('booking-form-error');
@@ -377,6 +379,20 @@ function initBookingForm() {
   function setFieldError(id) {
     const field = form.querySelector(`#${id}`)?.closest('.form-field');
     if (field) field.classList.add('has-error');
+  }
+
+  function showSuccess() {
+    if (formWrap) formWrap.hidden = true;
+    if (success) {
+      success.hidden = false;
+      success.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+  }
+
+  function showError(msg) {
+    errorEl.textContent = msg;
+    errorEl.hidden = false;
+    errorEl.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
   }
 
   form.addEventListener('submit', e => {
@@ -410,30 +426,38 @@ function initBookingForm() {
       return;
     }
 
-    const body = [
-      `Name: ${name}`,
-      `Email: ${email}`,
-      `Firm: ${firm}`,
-      `Focus: ${topicLabels[topic] || topic}`,
-      message ? `\n${message}` : '',
-    ].join('\n');
-
-    const mailto = `mailto:hello@photocollective.dev?subject=${encodeURIComponent('Discovery call request')}&body=${encodeURIComponent(body)}`;
+    const payload = {
+      name,
+      email,
+      firm,
+      topic: topicLabels[topic] || topic,
+      message: message || '',
+    };
 
     const submitLabel = submitBtn?.querySelector('span');
     if (submitBtn) {
       submitBtn.disabled = true;
-      if (submitLabel) submitLabel.textContent = 'Opening mail…';
+      if (submitLabel) submitLabel.textContent = 'Sending…';
     }
 
-    const mailBtn = document.getElementById('booking-success-mail');
-    if (mailBtn) mailBtn.href = mailto;
-
-    if (formWrap) formWrap.hidden = true;
-    if (success) {
-      success.hidden = false;
-      success.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-    }
+    // mode: 'no-cors' because Apps Script cannot set CORS headers via ContentService.
+    // The request still reaches and executes on the server; an opaque response = success.
+    fetch(SCRIPT_URL, {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload),
+    })
+      .then(() => {
+        showSuccess();
+      })
+      .catch(() => {
+        showError('Something went wrong. Please email us directly at hello@photoncollective.dev.');
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          if (submitLabel) submitLabel.textContent = 'Send request';
+        }
+      });
   });
 }
 
