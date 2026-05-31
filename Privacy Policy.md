@@ -1,203 +1,123 @@
-# **Privacy Policy**
+# Privacy Policy
 
-*Last updated: November 26, 2025*
+*Last updated: May 31, 2026*
 
-This Privacy Policy explains how we collect, use, disclose, and safeguard information when you visit our website (“Site”) or interact with any related services, content, or features (collectively, the “Services”). By accessing or using the Site, you agree to the terms of this Privacy Policy.
+Photon Collective ("we," "us," or "our") operates the website at photoncollective.dev (the "Site") and related content and features (collectively, the "Services"). This Privacy Policy describes how we collect, use, disclose, and protect information when you use the Site.
 
-If you do not agree with the terms, please discontinue use of the Site immediately.
+By using the Site, you agree to this Privacy Policy. If you do not agree, please discontinue use of the Site. See also our [Legal Notices](legal-notices.html).
 
 ---
 
-## **1\. Information We Collect**
+## 1. Information We Collect
 
-We may collect the following types of information:
+### 1.1 Information You Provide
 
-### **1.1 Information You Provide**
-
-This includes information you submit directly through forms, inquiries, or communications, such as:
+When you submit forms or contact us, we may collect:
 
 * Name
-
 * Email address
-
 * Company or organization
-
 * Job title
+* Messages or other content you choose to submit (including through our discovery call request form on the Site)
 
-* Messages or uploaded files
-
-### **1.2 Automatically Collected Information**
+### 1.2 Automatically Collected Information
 
 When you visit the Site, we may automatically collect:
 
 * IP address
-
 * Browser type and version
-
 * Device type and operating system
-
 * Referring URLs
+* Pages viewed and time spent on pages
+* General location derived from IP address
+* Cookies and similar technologies (see Section 6)
 
-* Pages viewed and time spent
+### 1.3 Information from Third Parties
 
-* General location data
-
-* Cookies and tracking technologies (see Section 6\)
-
-### **1.3 Information from Third Parties**
-
-We may receive information about you from:
-
-* Analytics providers
-
-* Advertising platforms
-
-* Public databases
-
-This information is used to improve the Site’s performance and understand user behavior.
+We may receive limited information from analytics providers or similar services to understand how the Site is used and to improve performance.
 
 ---
 
-## **2\. How We Use Your Information**
+## 2. How We Use Your Information
 
-We may use collected information to:
+We may use information we collect to:
 
-* Operate and improve the Site and Services
-
-* Respond to inquiries or support requests
-
-* Provide updates, announcements, or marketing communications
-
+* Operate, maintain, and improve the Site and Services
+* Respond to inquiries and support requests
+* Send updates or marketing communications where permitted
 * Analyze usage and performance trends
+* Maintain security, detect fraud, and prevent misuse
+* Comply with legal obligations
 
-* Enhance functionality, user experience, and design
-
-* Maintain security, detect fraud, and ensure proper access
-
-* Comply with legal obligations and regulatory requirements
-
-We do **not** sell personal information.
+We do not sell personal information.
 
 ---
 
-## **3\. How We Share Information**
+## 3. How We Share Information
 
-We may share information in the following circumstances:
+### 3.1 Service Providers
 
-### **3.1 Service Providers**
+We may share information with vendors that perform services on our behalf, such as hosting, analytics, email delivery, and security monitoring. These providers may use information only as needed to perform services for us.
 
-We may share limited information with third-party vendors that perform services on our behalf, such as:
+### 3.2 Legal Requirements
 
-* Hosting providers
+We may disclose information when we believe disclosure is required to:
 
-* Analytics tools
+* Comply with applicable law or legal process
+* Protect our rights, property, or safety, or that of others
+* Enforce our agreements, including our Legal Notices
 
-* Email and communication platforms
+### 3.3 Business Transfers
 
-* Security and monitoring providers
-
-These partners are permitted to use your data only to perform functions requested by us.
-
-### **3.2 Legal Requirements**
-
-We may disclose information if required to:
-
-* Comply with applicable laws
-
-* Respond to lawful requests or legal processes
-
-* Protect our rights, property, or safety
-
-* Enforce our Terms or other agreements
-
-### **3.3 Business Transfers**
-
-If we undergo a merger, acquisition, or other business restructuring, your information may be transferred as part of the transaction.
+If we are involved in a merger, acquisition, or similar transaction, information may be transferred as part of that transaction, subject to appropriate protections.
 
 ---
 
-## **4\. Data Security**
+## 4. Data Security
 
-We take appropriate technical and organizational measures to protect your information, including but not limited to:
-
-* Encrypted data transfer where appropriate
-
-* Controlled access and authorization procedures
-
-* Monitoring and audit logging
-
-However, no online system is entirely secure. We cannot guarantee absolute protection of your data.
+We use technical and organizational measures designed to protect information, including encrypted transfer where appropriate, access controls, and monitoring. No online system is completely secure, and we cannot guarantee absolute security.
 
 ---
 
-## **5\. Data Retention**
+## 5. Data Retention
 
-We retain information only as long as necessary to:
-
-* Provide the Services
-
-* Fulfill the purposes described in this policy
-
-* Comply with legal, accounting, or reporting obligations
-
-When information is no longer required, it is securely deleted or anonymized.
+We retain information only as long as needed to provide the Services, fulfill the purposes described in this policy, or comply with legal, accounting, or reporting obligations. When no longer required, we delete or anonymize information where feasible.
 
 ---
 
-## **6\. Cookies and Tracking Technologies**
+## 6. Cookies and Tracking Technologies
 
-We may use cookies, pixels, and similar technologies to:
-
-* Understand Site usage
-
-* Improve performance and usability
-
-* Personalize content or communications
-
-* Measure marketing effectiveness
-
-You may disable cookies through your browser settings, but some features of the Site may not function properly as a result.
+We may use cookies, pixels, and similar technologies to understand Site usage, improve performance, and measure marketing effectiveness. You may disable cookies in your browser settings; some Site features may not function properly if you do.
 
 ---
 
-## **7\. Your Rights and Choices**
+## 7. Your Rights and Choices
 
-Depending on your location, you may have rights related to your personal data, including:
-
-* Accessing the information we hold about you
-
-* Requesting corrections or updates
-
-* Requesting deletion of personal information
-
-* Objecting to or restricting processing
-
-* Withdrawing consent for marketing communications
-
-* Requesting a copy of your data, where applicable
-
-To exercise these rights, contact us at the email listed in Section 11\.
+Depending on your location, you may have rights regarding your personal information, including rights to access, correct, delete, restrict processing, or withdraw consent for marketing. To exercise these rights, contact us under Section 11.
 
 ---
 
-## **8\. International Data Transfers**
+## 8. International Data Transfers
 
-If you are accessing the Site from outside the country in which we operate, your information may be transferred to jurisdictions with different privacy laws.  
- We take steps to ensure such transfers comply with applicable legal requirements.
-
----
-
-## **9\. Children’s Privacy**
-
-The Site is **not intended for individuals under 16 years of age**.  
- We do not knowingly collect personal information from children. If you believe we may have collected such information, please contact us and we will take appropriate action.
+If you access the Site from outside Canada, your information may be processed in jurisdictions with different privacy laws. We take steps designed to ensure transfers comply with applicable requirements.
 
 ---
 
-## **10\. Updates to This Privacy Policy**
+## 9. Children's Privacy
 
-We may update or modify this Privacy Policy at any time.  
- When changes are made, we will update the “Last Updated” date at the top of this page. Continued use of the Site following updates constitutes acceptance of the revised policy.
+The Site is not intended for individuals under 16 years of age. We do not knowingly collect personal information from children. If you believe we have collected such information, contact us and we will take appropriate steps.
 
 ---
 
+## 10. Updates to This Privacy Policy
+
+We may update this Privacy Policy from time to time. We will revise the "Last updated" date when changes are posted. Continued use of the Site after changes constitutes acceptance of the revised policy.
+
+---
+
+## 11. Contact
+
+Questions about this Privacy Policy or our privacy practices may be directed to:
+
+**Photon Collective**  
+Email: [hello@photocollective.dev](mailto:hello@photocollective.dev)

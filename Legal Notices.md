@@ -1,99 +1,65 @@
-# **Legal Notices**
+# Legal Notices
 
-## **1\. Introduction**
+*Last updated: May 31, 2026*
 
-These Legal Notices (“Notices”) govern your access to and use of this website (the “Site”) and any related services, content, features, or materials provided through it (collectively, the “Services”). By accessing or using the Site, you acknowledge that you have read, understood, and agree to be bound by these Notices. If you do not agree, you must discontinue use of the Site immediately.
+These Legal Notices ("Notices") govern your access to and use of the website at photoncollective.dev (the "Site") and related content and features (collectively, the "Services"). By using the Site, you agree to these Notices. If you do not agree, discontinue use of the Site. See also our [Privacy Policy](privacy-policy.html).
 
-## **2\. No Professional Advice**
+---
 
-All information, content, and materials available on this Site are provided for general informational purposes only.  
- Nothing on this Site constitutes **legal, financial, investment, accounting, or professional advice**. Any decisions you make based on the information provided are done at your own discretion and risk. You should always consult qualified professionals before relying on any content found here.
+## 1. Introduction
 
-## **3\. No Warranties**
+Photon Collective ("we," "us," or "our") provides the Site for general informational purposes about our business and Services. These Notices apply to all visitors and users of the Site.
 
-The Site and all related content are provided on an **“as is” and “as available” basis**.  
- We make **no representation or warranty**, express or implied, regarding the accuracy, completeness, reliability, availability, or suitability of the Site’s content, including but not limited to:
+---
 
-* Data, analyses, or visualizations
+## 2. No Professional Advice
 
-* Examples, illustrations, or case studies
+All content on the Site is provided for general informational purposes only. Nothing on the Site constitutes legal, financial, investment, accounting, or other professional advice. You should consult qualified professionals before making decisions based on Site content. Any reliance on Site content is at your own risk.
 
-* Descriptions of workflows, capabilities, or systems
+---
 
-* Third-party references, links, or integrations
+## 3. No Warranties
 
-We disclaim all warranties to the fullest extent permitted by law, including warranties of merchantability, fitness for a particular purpose, and non-infringement.
+The Site and all content are provided on an "as is" and "as available" basis. To the fullest extent permitted by law, we disclaim all warranties, express or implied, including warranties of merchantability, fitness for a particular purpose, and non-infringement. We do not warrant that content is accurate, complete, reliable, or suitable for any purpose, including data, analyses, case studies, workflow descriptions, or third-party references.
 
-## **4\. Limitation of Liability**
+---
 
-To the maximum extent allowed by law, we are **not responsible or liable** for any indirect, incidental, consequential, special, exemplary, or punitive damages, including but not limited to:
+## 4. Limitation of Liability
 
-* Loss of profits or revenue
+To the maximum extent permitted by law, we are not liable for any indirect, incidental, consequential, special, exemplary, or punitive damages, including loss of profits, revenue, data, business interruption, operational delays, financial loss, or compliance issues arising from your use of the Site. Your use of the Site is at your own risk.
 
-* Business interruption
+---
 
-* Loss of data or corruption of data
+## 5. Third-Party Links and Content
 
-* Operational delays
+The Site may link to third-party websites, platforms, or tools for convenience. We do not endorse, control, or assume responsibility for third-party content, accuracy, security, or practices.
 
-* Financial loss, investment loss, or compliance issues
+---
 
-Your use of the Site is entirely at your own risk.
+## 6. Intellectual Property Rights
 
-## **5\. Third-Party Links & Content**
+All content on the Site, including text, graphics, images, branding, product descriptions, case studies, layouts, and designs, is protected by applicable intellectual property laws. You may not reproduce, modify, redistribute, or use our branding or trademarks without our prior written consent. Unauthorized use may violate applicable law.
 
-The Site may contain links to third-party websites, platforms, data providers, or tools.  
- These are provided solely for convenience and do not constitute an endorsement, approval, or verification of any third-party product, service, or content.  
- We have no control over third-party sites and assume no responsibility for their content, accuracy, security, or practices.
+---
 
-## **6\. Intellectual Property Rights**
+## 7. No Guarantee of Results
 
-All content displayed on the Site — including text, graphics, images, branding, product descriptions, case studies, layouts, and designs — is protected by applicable copyright, trademark, and intellectual property laws.
+Examples, case studies, and workflow descriptions on the Site are illustrative only. They do not guarantee specific results, future performance, operational outcomes, compliance achievements, or efficiency improvements. Actual results depend on your data, operations, regulatory context, and other factors outside our control.
 
-You may not:
+---
 
-* Reproduce, copy, or modify any content
+## 8. Data and Security
 
-* Redistribute or republish materials from the Site
+We strive to maintain a secure and reliable Site but cannot guarantee uninterrupted or error-free operation, freedom from harmful components, or security of data you transmit through the Site. You are responsible for appropriate safeguards when accessing the Site. For information about data collected through the Site, see our Privacy Policy.
 
-* Use branding or trademarks without express written permission
+---
 
-Any unauthorized use may violate intellectual property laws and could result in legal consequences.
+## 9. Changes to the Site or Notices
 
-## **7\. No Guarantee of Results**
+We may modify, update, or discontinue any part of the Site or these Notices at any time, with or without notice. Continued use after changes constitutes acceptance of the updated Notices.
 
-Any examples, case studies, performance descriptions, or workflow explanations presented on the Site are **illustrative only**.  
- They do **not** guarantee:
+---
 
-* Specific results
+## 10. Governing Law
 
-* Future performance
-
-* Operational outcomes
-
-* Compliance achievements
-
-* Efficiency improvements
-
-Actual results may vary depending on data quality, operational context, regulatory environment, and other independent factors.
-
-## **8\. Data and Security**
-
-While we strive to maintain a secure and reliable Site, we **cannot guarantee**:
-
-* That the Site will be uninterrupted or error-free
-
-* That the Site will be free of viruses, malware, or harmful components
-
-* That data transmitted through the Site will remain secure
-
-You are responsible for implementing appropriate safeguards when accessing the Site.
-
-## **9\. Changes to the Site or Notices**
-
-We reserve the right to modify, update, or discontinue any part of the Site or these Notices at any time, with or without prior notice.  
- Continued use of the Site following changes constitutes acceptance of the updated Notices.
-
-## **10\. Governing Law**
-
-These Notices and your use of the Site are governed by and interpreted in accordance with the laws applicable in the jurisdiction in which the company operates, without regard to conflicts of law principles.
+These Notices and your use of the Site are governed by the laws of the Province of British Columbia and the federal laws of Canada applicable therein, without regard to conflict of law principles. You agree to submit to the exclusive jurisdiction of the courts located in British Columbia for disputes arising from these Notices or the Site, except where prohibited by law.
