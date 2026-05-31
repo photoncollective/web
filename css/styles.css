@@ -2810,7 +2810,8 @@ button:focus-visible,
   }
 
   .booking-success {
-    padding-top: 20px;
+    padding-top: clamp(40px, 8svh, 72px);
+    padding-bottom: clamp(24px, 5svh, 48px);
     text-align: center;
   }
 
