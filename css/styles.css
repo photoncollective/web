@@ -3212,7 +3212,7 @@ button:focus-visible,
 }
 
 .legal-body section {
-  scroll-margin-top: calc(var(--nav-h) + 16px);
+  scroll-margin-top: calc(var(--nav-h) + 40px);
 }
 
 .legal-body section + section {
@@ -3279,7 +3279,7 @@ button:focus-visible,
 
   .legal-toc {
     position: sticky;
-    top: calc(var(--nav-h) + 24px);
+    top: calc(var(--nav-h) + 48px);
   }
 }
 
