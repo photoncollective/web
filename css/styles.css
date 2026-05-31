@@ -2805,9 +2805,17 @@ button:focus-visible,
     max-width: 34ch;
   }
 
-  .booking-form-wrap,
-  .booking-success {
+  .booking-form-wrap {
     padding-top: 24px;
+  }
+
+  .booking-success {
+    border-top: none;
+    padding-top: 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
   .form-row {
